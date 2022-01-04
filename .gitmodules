@@ -1,0 +1,6 @@
+[submodule "zinit/.local/share/zinit/zinit.git"]
+	path = zinit/.local/share/zinit/zinit.git
+	url = https://github.com/zdharma-continuum/zinit.git
+[submodule "zsh/.config/zsh/theme/powerlevel10k/powerlevel10k"]
+	path = zsh/.config/zsh/theme/powerlevel10k/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
