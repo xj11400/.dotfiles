@@ -12,6 +12,6 @@
 	sslverify = false
 [credential]
 	helper = store
-[branch]
-  autosetupmerge = always
-  autosetuprebase = always
+#[branch]
+#  autosetupmerge = always
+#  autosetuprebase = always
