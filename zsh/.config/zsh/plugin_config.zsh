@@ -10,6 +10,10 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=73'
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# zsh-autocomplete
+zstyle ':autocomplete:*' default-context history-incremental-search-backward
+zstyle ':autocomplete:history-search:*' list-lines 16  # int
+
 # --------------
 # other plugin
 # --------------
