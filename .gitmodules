@@ -7,3 +7,6 @@
 [submodule "tmux/.local/share/tmux/plugins/tpm"]
 	path = tmux/.local/share/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "fzf/.local/share/fzf"]
+	path = fzf/.local/share/fzf
+	url = https://github.com/junegunn/fzf.git

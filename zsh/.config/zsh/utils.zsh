@@ -1,5 +1,5 @@
 # source 
-[ -f ~/.config/zsh/utils/fzf.zsh ] && source ~/.config/zsh/utils/fzf.zsh
+[ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
 
 
 # alias
