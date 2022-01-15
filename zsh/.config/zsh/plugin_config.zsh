@@ -9,10 +9,28 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=73'
 
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'
 
 # zsh-autocomplete
 zstyle ':autocomplete:*' default-context history-incremental-search-backward
 zstyle ':autocomplete:history-search:*' list-lines 16  # int
+
+# fzf-tab
+#zstyle ":completion:*" matcher-list \
+#  'b:=*' \
+#  "m:{a-zA-Z}={A-Za-z}" \
+#  "r:|[._-]=* r:|=*" \
+#  "l:|=* r:|=*"
+#
+#zstyle ":completion:*:git-checkout:*" sort false
+#zstyle ':completion:*' group-name ''
+#zstyle ':completion:*:descriptions' format '[%d]'
+#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':fzf-tab:*' single-group color header
+#zstyle ':fzf-tab:*' group-colors $FZF_TAB_GROUP_COLORS
+#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+#zstyle ':fzf-tab:complete:_zlua:*' query-string input
+#zstyle ':completion:*:*:git:*' script ~/.git-completion
 
 # --------------
 # other plugin
