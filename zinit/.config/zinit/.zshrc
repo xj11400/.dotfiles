@@ -15,14 +15,22 @@ zinit light-mode for \
 #zinit light zdharma-continuum/history-search-multi-word
 #zinit light zdharma-continuum/fast-syntax-highlighting
 
-zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
-    zsh-users/zsh-completions
+#zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
+#    zsh-users/zsh-completions
+#
+#zinit ice lucid wait='0' atload='_zsh_autosuggest_start'
+#zinit light zsh-users/zsh-autosuggestions
+#
+#zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
+#    zsh-users/zsh-syntax-highlighting
 
-zinit ice lucid wait='0' atload='_zsh_autosuggest_start'
-zinit light zsh-users/zsh-autosuggestions
-
-zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
-    zsh-users/zsh-syntax-highlighting
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
 
 zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
     wfxr/forgit
