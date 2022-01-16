@@ -12,3 +12,6 @@ alias project="cd /mnt/c/Jase/Project"
 
 #alias gdiff="git diff -U$(wc -l $1) $1"
 #alias gdiff="echo $(wc -l $1)"
+
+#
+alias dot="cd ~/.dotfiles"
