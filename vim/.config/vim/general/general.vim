@@ -1,6 +1,6 @@
 "
 " general
-" ------------------------------------------------------------
+" ============================================================
 
 " auto reload $MYVIMRC
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -43,3 +43,10 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=utf-8
 set encoding=utf-8
 set ambiwidth=double
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 關閉VIM的時候保存會話，按F122讀取會話
+set sessionoptions=buffers,sesdir,help,tabpages,winsize
+au VimLeave * mks! ~/Session.vim
+nmap <F7> :so ~/Session.vim<CR>

@@ -1,6 +1,6 @@
 "
 " editor
-" --------------------------------------------------------
+" ============================================================
 
 " backup 
 " ------
@@ -46,6 +46,7 @@ set autoindent
 set smartindent
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " wrap line
 " ----------
 
@@ -86,3 +87,9 @@ set foldmethod=manual " Set fold method to 'manual'.
 :  let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
 :  return v:folddashes . sub
 :endfunction
+
+
+"黏貼不換行問題的解決方法"
+set pastetoggle=<F9>
+
+

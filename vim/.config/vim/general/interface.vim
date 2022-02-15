@@ -5,9 +5,6 @@
 " cursor and move
 " ---------------
 
-" show ruler
-set ruler
-
 " set line number
 set number
 
@@ -114,13 +111,26 @@ set lazyredraw
 " a buffer becomes hidden when it is abandoned
 set hidden
 
-" show command
-set showcmd
-
 " no annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
 
+if has('cmdline_info')
+    " show command
+    set showcmd
 
+    " show ruler
+    set ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) "
+endif
+
+if has('statusline')
+    set laststatus=2
+    set statusline=%<%f\                     " Filename
+    set statusline+=%w%h%m%r                 " Options
+    "set statusline+=\ [%{&ff}/%Y]            " Filetype
+    "set statusline+=\ [%{getcwd()}]          " Current dir
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
