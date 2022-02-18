@@ -1,0 +1,73 @@
+diff --git a/config.def.h b/config.def.h
+index 91ab8ca..7579c50 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -95,43 +95,41 @@ unsigned int tabspaces = 8;
+ 
+ /* Terminal colors (16 first used in escape sequence) */
+ static const char *colorname[] = {
+-	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
+ 
++	/* 8 normal colors */
++	[0] = "#616671", /* black   */
++	[1] = "#ca5448", /* red     */
++	[2] = "#799c61", /* green   */
++	[3] = "#9b8a4b", /* yellow  */
++	[4] = "#5882ca", /* blue    */
++	[5] = "#a352a9", /* magenta */
++	[6] = "#2e7991", /* cyan    */
++	[7] = "#d0d2d6", /* white   */
++	
+ 	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
++	[8]  = "#9a9da4", /* black   */
++	[9]  = "#f6afa8", /* red     */
++	[10] = "#9bc77b", /* green   */
++	[11] = "#caba83", /* yellow  */
++	[12] = "#88b1fb", /* blue    */
++	[13] = "#ce9edc", /* magenta */
++	[14] = "#52b5d9", /* cyan    */
++	[15] = "#f4f7ff", /* white   */
+ 
+ 	[255] = 0,
+-
+-	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
+-	"gray90", /* default foreground colour */
+-	"black", /* default background colour */
++	
++	/* special colors */
++	[256] = "#000000", /* background */
++	[257] = "#dadbe2", /* foreground */
+ };
+ 
+-
+ /*
+  * Default colors (colorname index)
+  * foreground, background, cursor, reverse cursor
+  */
+-unsigned int defaultfg = 258;
+-unsigned int defaultbg = 259;
+-unsigned int defaultcs = 256;
++unsigned int defaultfg = 257;
++unsigned int defaultbg = 256;
++unsigned int defaultcs = 257;
+ static unsigned int defaultrcs = 257;
+ 
+ /*
