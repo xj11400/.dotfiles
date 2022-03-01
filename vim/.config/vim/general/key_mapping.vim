@@ -20,28 +20,39 @@ cnoremap <C-e> <End>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" instert mode hjkl
-" <C-hjkl>
-"imap <C-h> <C-o>h
-"imap <C-j> <C-o>j
-"imap <C-k> <C-o>k
-"imap <C-l> <C-o>l
-
-" insert mode operation
-imap <C-S-h> <BS>
-imap <C-S-d> <Del>
-
-imap <M-f> <C-o>w
-imap <M-b> <C-o>b
-
 " system clipboard
 nmap <leader>y "+y
 nmap <leader>p "+p
 vmap <leader>y "+y
 vmap <leader>p "+p
 
+" visual-search
+vmap * y/<C-R>"<CR>
+vmap # y?<C-R>"<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
+" !!TODO conflict
+" instert mode hjkl
+" <C-hjkl>
+" <Left>
+" <Down>
+" <Up>
+" <Right>
+imap <C-h> <C-o>h
+imap <C-j> <C-o>j
+imap <C-k> <C-o>k
+imap <C-l> <C-o>l
+
+" insert mode operation
+" !!TODO shift can't work
+" https://cache.one/read/16949325
+inoremap <C-S-h> <BS>
+inoremap <C-S-d> <Del>
+
+imap <M-f> <C-o>w
+imap <M-b> <C-o>b
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " test area
 "
 " when lines spanning multiple display lines, navigate through them with gj not j
