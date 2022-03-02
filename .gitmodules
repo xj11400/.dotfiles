@@ -10,3 +10,6 @@
 [submodule "fzf/.local/share/fzf"]
 	path = fzf/.local/share/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "nvim/.local/share/nvim/site/pack/packer/start/packer.nvim"]
+	path = nvim/.local/share/nvim/site/pack/packer/start/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim
