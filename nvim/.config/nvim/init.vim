@@ -4,7 +4,7 @@
 
 " general
 " -------
-runtime $HOME/.config/vim/vimrc.vim
+source $HOME/.config/vim/vimrc.vim
 
 " ui
 " --
@@ -16,7 +16,7 @@ runtime $HOME/.config/vim/vimrc.vim
 " ------
 "  ./plugins.lua
 "  ./lua/plugins.lua
-lua require('plugins')
+"lua require('plugins')
 
 "  ./lua/core/plugins.lua
 "lua require('core.plugins')
