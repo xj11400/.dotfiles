@@ -5,6 +5,7 @@
 " general
 " -------
 source $HOME/.config/vim/vimrc.vim
+lua require('core')
 
 " ui
 " --
@@ -14,10 +15,6 @@ source $HOME/.config/vim/vimrc.vim
 
 " plugin
 " ------
-"  ./plugins.lua
-"  ./lua/plugins.lua
-"lua require('plugins')
-
-"  ./lua/core/plugins.lua
-"lua require('core.plugins')
+" lua require('plugins')
+" require('plugins')
 
