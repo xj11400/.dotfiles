@@ -1,10 +1,13 @@
-# download fzf
-x_use "junegunn/fzf" $XDG_DATA_HOME fzf
-
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */home/$USERNAME/.local/share/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}/home/$USERNAME/.local/share/fzf/bin"
+else
+    # TODO
+    #download fzf
+    x_use "junegunn/fzf" $XDG_DATA_HOME fzf
+    #install fzf
+    source "fzf_installer"
 fi
 
 # Auto-completion
