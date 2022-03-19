@@ -43,4 +43,4 @@ zmodule zsh-users/zsh-history-substring-search
 
 # theme
 #zmodule gitster
-zmodule /home/jase/xxx/zim/gitster
+zmodule $HOME/.local/share/zsh/theme/gitster

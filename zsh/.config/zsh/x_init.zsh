@@ -1,0 +1,64 @@
+#
+# x_init.zsh
+# ############################################################
+
+# X_ZSH variables
+# ===============
+
+X_ZSH_CONFIG_HOME="$HOME/.config/zsh"
+X_ZSH_DATA_HOME="$HOME/.local/share/zsh"
+
+X_ZSH_PLUGIN_HOME="$X_ZSH_CONFIG_HOME/plugin"
+X_ZSH_THEME_HOME="$X_ZSH_CONFIG_HOME/theme"
+X_ZSH_CORE_HOME="$X_ZSH_CONFIG_HOME"
+
+X_ZSH_THEME_DATA_HOME="$X_ZSH_DATA_HOME/theme"
+X_ZSH_PLUGIN_MANAGER_HOME="$X_ZSH_DATA_HOME/zpm"
+X_ZSH_PLUGIN_DATA_HOME="$X_ZSH_DATA_HOME/plugin"
+
+# x_zsh functions
+# ===============
+function x_zsh_load(){
+    source $X_ZSH_CONFIG_HOME/$1
+}
+
+function x_zsh_require(){
+    for file in `ls $X_ZSH_CONFIG_HOME/$1/*.zsh`
+    do
+        source $file
+    done
+}
+
+function x_zsh_x_require(){
+    for file in `ls $X_ZSH_CONFIG_HOME/$1/*.x.zsh`
+    do
+        source $file
+    done
+}
+
+# load files
+# ==========
+
+# config
+x_zsh_load x_config
+
+# core
+x_zsh_require core
+
+# theme
+x_zsh_require theme
+
+# plugin
+x_zsh_require plugin
+
+# install
+x_zsh_require install
+
+# custom
+x_zsh_require custom
+
+# unset function
+unset -f x_zsh_x_require
+unset -f x_zsh_require
+unset -f x_zsh_load
+

@@ -2,7 +2,7 @@
 ####    zshenv
 # ------------------------------
 # Define Zim location
-: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.local/share/zim}
+: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.local/share/zsh/zpm/zim}
 
 
 # --------------------------------------------------------------------------
