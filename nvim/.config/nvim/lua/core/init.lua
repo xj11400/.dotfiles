@@ -12,5 +12,6 @@ for _, module in ipairs(core_modules) do
    end
 end
 
+--
 require("core.mappings").misc()
 

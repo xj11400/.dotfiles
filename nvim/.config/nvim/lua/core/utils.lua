@@ -119,8 +119,9 @@ end
 -- hide statusline
 -- tables fetched from load_config function
 M.hide_statusline = function()
-   local hidden = require("core.utils").load_config().plugins.options.statusline.hidden
-   local shown = require("core.utils").load_config().plugins.options.statusline.shown
+   local hidden = require("core.utils").load_config("plugins.options").options.statusline.hidden
+   local shown = require("core.utils").load_config("plugins.options").options.statusline.shown
+
    local api = vim.api
    local buftype = api.nvim_buf_get_option(0, "ft")
 
@@ -138,8 +139,8 @@ M.hide_statusline = function()
    api.nvim_set_option("laststatus", 2)
 end
 
-M.load_config = function()
-   local conf = require "core.default_config"
+M.load_config = function(config)
+   local conf = require("config." .. config)
 
    local chadrcExists, change = pcall(require, "custom.chadrc")
 
@@ -152,7 +153,18 @@ M.load_config = function()
    return conf
 end
 
+M.load_plugin_mappings = function(plugin)
+    local mappings = requre("plugins.config." .. plugin).mappings
+    return mappings
+end
+
 M.map = function(mode, keys, command, opt)
+   -- If keys are nil, false or empty string, then the mapping will be not applied
+   -- Useful when one wants to use that keymap for any other purpose
+   if not keys or keys == "" then
+      return
+   end
+
    local options = { noremap = true, silent = true }
    if opt then
       options = vim.tbl_extend("force", options, opt)
@@ -250,7 +262,7 @@ end
 
 M.override_req = function(name, default_config, config_function)
    local override, apply_table_override =
-      require("core.utils").load_config().plugins.default_plugin_config_replace[name], "false"
+      require("core.utils").load_config("plugins.options").default_plugin_config_replace[name], "false"
    local result = default_config
    if type(override) == "string" and override ~= "" then
       return "require('" .. override .. "')"
@@ -276,7 +288,7 @@ end
 -- default_table = the default configuration table of the plugin
 -- returns the modified configuration table
 M.tbl_override_req = function(name, default_table)
-   local override = require("core.utils").load_config().plugins.default_plugin_config_replace[name] or {}
+   local override = require("core.utils").load_config("plugins.options").default_plugin_config_replace[name] or {}
    return vim.tbl_deep_extend("force", default_table, override)
 end
 
