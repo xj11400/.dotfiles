@@ -18,4 +18,12 @@ fi
 
 # dir colors
 # ==========
-test -r $X_ZSH_THEME_HOME/.dir_colors && eval $(dircolors $X_ZSH_THEME_HOME/.dir_colors)
+if [[ "$MY_OS" == "Darwin" ]];then
+#    eval $(gdircolors -b $X_ZSH_THEME_HOME/.dircolors)
+#    if [ -n “$LS_COLORS” ]; then
+#    zstyle ‘:completion:*’ list-colors ${(s.:.)LS_COLORS}
+#    fi
+    ;
+else
+    test -r $X_ZSH_THEME_HOME/.dir_colors && eval $(dircolors $X_ZSH_THEME_HOME/.dir_colors)
+fi

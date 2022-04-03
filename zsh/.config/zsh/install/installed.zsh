@@ -9,5 +9,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
 
 # alias
-alias ra='/usr/bin/ranger'
+alias ra='$(command -v ranger)'
 alias lgit='lazygit'
+alias ldocker='lazydocker'

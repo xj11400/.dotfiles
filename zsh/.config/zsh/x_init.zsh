@@ -36,6 +36,10 @@ function x_zsh_x_require(){
     done
 }
 
+# pre load
+# ========
+source $X_ZSH_CONFIG_HOME/utils/os.zsh
+
 # load files
 # ==========
 
