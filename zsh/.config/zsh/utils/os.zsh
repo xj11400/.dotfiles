@@ -17,6 +17,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
 elif [[ "$(uname)" == "Linux" ]];then
     # For Linux
     export MY_OS="Linux"
+    if [[ "$(uname -a | grep "WSL")" ]]; then
+        export MY_DISTRO="WSL"
+    fi
 else
     export MY_OS="Linux"
 fi
