@@ -154,7 +154,7 @@ M.load_config = function(config)
 end
 
 M.load_plugin_mappings = function(plugin)
-    local mappings = requre("plugins.config." .. plugin).mappings
+    local mappings = requre("plugins." .. plugin).mappings()
     return mappings
 end
 

@@ -2,7 +2,7 @@
 local core_modules = {
 --   "core.options",
    "core.autocmds",
-   "core.mappings",
+   "core.commands",
 }
 
 for _, module in ipairs(core_modules) do
@@ -13,5 +13,10 @@ for _, module in ipairs(core_modules) do
 end
 
 --
-require("core.mappings").misc()
+require("core.commands").misc()
+
+
+-- # initialize X
+-- define X global variable
+
 

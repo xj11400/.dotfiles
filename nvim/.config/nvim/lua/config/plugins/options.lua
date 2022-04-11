@@ -18,7 +18,7 @@ M.status = {
 }
 M.options = {
    packer = {
-      init_file = "plugins.packerInit",
+      init_file = "core.plugin.packerInit",
    },
    autopairs = { loadAfter = "nvim-cmp" },
    cmp = {
