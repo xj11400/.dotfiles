@@ -5,7 +5,8 @@
 " general
 " -------
 source $HOME/.config/vim/vimrc.vim
-lua require('core')
+" lua require('core')
+lua require('xj')
 
 " ui
 " --

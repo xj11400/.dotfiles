@@ -119,8 +119,8 @@ end
 -- hide statusline
 -- tables fetched from load_config function
 M.hide_statusline = function()
-   local hidden = require("core.utils").load_config("plugins.options").options.statusline.hidden
-   local shown = require("core.utils").load_config("plugins.options").options.statusline.shown
+   local hidden = require("xj.core.utils").load_config("plugins.options").options.statusline.hidden
+   local shown = require("xj.core.utils").load_config("plugins.options").options.statusline.shown
 
    local api = vim.api
    local buftype = api.nvim_buf_get_option(0, "ft")
@@ -154,7 +154,7 @@ M.load_config = function(config)
 end
 
 M.load_plugin_mappings = function(plugin)
-    local mappings = requre("plugins." .. plugin).mappings()
+    local mappings = requre("xj.plugins." .. plugin).mappings()
     return mappings
 end
 
@@ -262,7 +262,7 @@ end
 
 M.override_req = function(name, default_config, config_function)
    local override, apply_table_override =
-      require("core.utils").load_config("plugins.options").default_plugin_config_replace[name], "false"
+      require("xj.core.utils").load_config("plugins.options").default_plugin_config_replace[name], "false"
    local result = default_config
    if type(override) == "string" and override ~= "" then
       return "require('" .. override .. "')"
@@ -288,7 +288,7 @@ end
 -- default_table = the default configuration table of the plugin
 -- returns the modified configuration table
 M.tbl_override_req = function(name, default_table)
-   local override = require("core.utils").load_config("plugins.options").default_plugin_config_replace[name] or {}
+   local override = require("xj.core.utils").load_config("plugins.options").default_plugin_config_replace[name] or {}
    return vim.tbl_deep_extend("force", default_table, override)
 end
 
@@ -303,7 +303,7 @@ end
 
 -- remove plugins specified by user from the plugins table
 M.remove_default_plugins = function(plugins)
-   local removals = require("core.utils").load_config().plugins.default_plugin_remove or {}
+   local removals = require("xj.core.utils").load_config().plugins.default_plugin_remove or {}
    if not vim.tbl_isempty(removals) then
       for _, plugin in pairs(removals) do
          plugins[plugin] = nil
@@ -314,7 +314,7 @@ end
 
 -- append user plugins to default plugins
 M.add_user_plugins = function(plugins)
-   local user_Plugins = require("core.utils").load_config().plugins.install or {}
+   local user_Plugins = require("xj.core.utils").load_config().plugins.install or {}
    if type(user_Plugins) == "string"
       then user_Plugins=require(user_Plugins)
    end

@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
-local options = require("core.utils").load_config("general.config").options
+local options = require("xj.core.utils").load_config("xj.general.config").options
 
 opt.title = true
 opt.clipboard = options.clipboard
@@ -76,6 +76,6 @@ end
 --Defer loading shada until after startup_
 vim.opt.shadafile = "NONE"
 vim.schedule(function()
-   vim.opt.shadafile = require("core.utils").load_config().options.shadafile
+   vim.opt.shadafile = require("xj.core.utils").load_config().options.shadafile
    vim.cmd [[ silent! rsh ]]
 end)
