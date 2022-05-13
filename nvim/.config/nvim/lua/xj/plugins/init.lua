@@ -63,6 +63,7 @@ local plugins = {
       "wbthomason/packer.nvim",
       event = "VimEnter",
    },
+
     --
    { 
        "nvim-telescope/telescope.nvim",
@@ -73,12 +74,12 @@ local plugins = {
        module = "telescope",
        cmd = "Telescope",
        config = function()
-          require("xj.plugins.telescope").setup()
+          require("xj.plugins.telescope")
        end,
-       setup = function()
-          require("xj.plugins.telescope").mappings()
-       end,
-       -- disable = not xj.builtin.telescope.active,
+       -- setup = function()
+       --    require("xj.plugins.telescope").mappings()
+       -- end,
+       -- disable = not xj.plugins.telescope.active,
    },
 
 }

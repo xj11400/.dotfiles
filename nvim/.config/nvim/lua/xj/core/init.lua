@@ -1,5 +1,3 @@
-require("xj.core.commands").misc()
-
 -- init xxx
 
 -- bootstrap

@@ -149,6 +149,8 @@ function Log:tbl_str(msg,indent)
     for k,v in pairs(msg) do
         if type(v) == "table" then
           v = self:tbl_str(v, indent+2)
+        elseif type(v) == "string" then
+            v = '"' .. v .. '"'
         else
           v = tostring(v)
         end

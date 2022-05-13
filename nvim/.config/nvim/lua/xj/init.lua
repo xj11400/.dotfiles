@@ -13,9 +13,8 @@ logger:info("------ start ------")
 --
 --logger:print(init_path)
 --logger:print(base_dir)
-logger:print(vim.opt.rtp)
+--logger:print(vim.opt.rtp)
 --
-logger:debug(true)
 
 require("xj.core")
 
