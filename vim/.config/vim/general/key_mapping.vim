@@ -30,6 +30,8 @@ vmap <leader>p "+p
 vmap * y/<C-R>"<CR>
 vmap # y?<C-R>"<CR>
 
+" no heighlight
+nmap <C-n> :noh<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " !!TODO conflict
 " instert mode hjkl
