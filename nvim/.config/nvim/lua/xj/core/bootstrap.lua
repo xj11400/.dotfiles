@@ -1,6 +1,7 @@
--- [lunarVim] bootstrap.lua
 -- init()
+-- - initiallize path environment variables and prepare for startup
 -- update()
+-- - update .....
 
 local M = {}
 
@@ -8,17 +9,9 @@ function M:init()
     -- core config init
     require("xj.core.config"):init()
 
-    -- options init
-    --
-
-    -- plugin init
+    -- plugin manager cmd init
     require("xj.core.plugin"):init()
 
-end
-
-function M:config()
-    -- config file
-    pcall(require,"xj.config")
 end
 
 function M:update()

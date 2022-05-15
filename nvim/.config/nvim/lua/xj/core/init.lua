@@ -5,8 +5,6 @@
 -- - general option, keymapping, autocmd?
 require("xj.core.bootstrap"):init()
 -- -- require("xj.core.config"):init()
-logger = require("xj.core.logger")
-logger:print(xj)
 
 -- config
 -- - load temp setting config. eg. temp disable
@@ -14,3 +12,5 @@ logger:print(xj)
 -- require("xj.core.config"):load()
 
 
+logger = require("xj.core.logger")
+logger:print(xj)

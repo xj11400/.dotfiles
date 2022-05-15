@@ -73,13 +73,6 @@ local plugins = {
         },
        module = "telescope",
        cmd = "Telescope",
-       config = function()
-          require("xj.plugins.telescope")
-       end,
-       -- setup = function()
-       --    require("xj.plugins.telescope").mappings()
-       -- end,
-       -- disable = not xj.plugins.telescope.active,
    },
 
 }

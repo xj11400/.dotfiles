@@ -3,6 +3,7 @@ local M = {}
 
 local logger =  require("xj.core.logger")
 
+--- init
 function M:init()
     -- Add Packer commands because we are not loading it at startup
     --- new neovim api 0.7
@@ -37,53 +38,75 @@ function M:init()
     user_cmd("PackerSync", packer_cmd "sync", {})
     user_cmd("PackerUpdate", packer_cmd "update", {})
 
----    local function packer_cmd()
----        vim.cmd "silent! command PackerClean lua require('xj.core.plugin'):laod() require('packer').clean()"
----        vim.cmd "silent! command PackerCompile lua require('xj.core.plugin'):laod() require('packer').compile()"
----        vim.cmd "silent! command PackerInstall lua require('xj.core.plugin'):laod() require('packer').install()"
----        vim.cmd "silent! command PackerStatus lua require('xj.core.plugin'):laod() require('packer').status()"
----        vim.cmd "silent! command PackerSync lua require('xj.core.plugin'):laod() require('packer').sync()"
----        vim.cmd "silent! command PackerUpdate lua require('xj.core.plugin'):laod() require('packer').update()"
----    end
----
----    packer_cmd()
-
-    self:config()
 end
 
---- setting config
+--- config
 function M:config()
 
-    --* load plugin list
+    --* plugin list init
     local plugins = require("xj.plugins")
-    utils:load_plugins(plugins)
+    utils.plugin_list_init(plugins)
 
-    --* load plugin config
-
-    local directories = utils:scandir(os.getenv("HOME").."/.config/nvim/lua/xj/plugins/")
+    --* plugin config init
+    local directories = utils.scandir(os.getenv("HOME").."/.config/nvim/lua/xj/plugins/")
 
     for _, plugin_dir in pairs(directories) do
-        logger:debug(plugin_dir)
+        --logger:debug("find plugin config : "..plugin_dir)
 
         local status, retval = pcall(require,"xj.plugins."..plugin_dir) 
 
         if status then
-            pcall(retval.init)
+            xj.plugins[plugin_dir].config_file = retval
+            xj.plugins[plugin_dir].config = {}
+            pcall(xj.plugins[plugin_dir].config_file.init)
         end
     end
 
     --* load config file
-    pcall(require,"xj.config.plugin")
+    ---*[TODO] it can't change config in xxxplugin.setup()
+    local status, conf = pcall(require,"xj.config.plugin")
+    if status then 
+        utils.plugin_config_override(conf.plugins)
+    end
 
 end
 
---- load plugins
+--- setup
 function M:setup()
     -- pack init file
     local packer = self:packer()
     
     -- load plugins
     local plugins = require("xj.plugins")
+
+    -- add disable = not xj.plugins.xxplugin.active
+    for k,conf in ipairs(plugins) do
+        local plugin = utils.plugin_tag(conf[1])
+
+        --* if conf_file exist
+        if xj.plugins[plugin].config_file then
+            -- local plugin_config_file = xj.plugins[plugin].config_file
+            local plugin_config_file = require("xj.plugins."..plugin)
+
+            -- option : config
+            if not plugins[k].config and plugin_config_file.config then
+                plugins[k].config = plugin_config_file.config
+            end
+        
+            -- option : setup
+            if not plugins[k].setup and plugin_config_file.setup then
+                plugins[k].setup = plugin_config_file.setup
+            end
+        end
+
+        -- option : disable
+        if conf[disable] == nil then
+            plugins[k].disable = not xj.plugins[plugin].active
+        end
+    end
+
+    logger:debug("plugins...setup()")
+    logger:debug(plugins)
     
     -- Packer use plugins
     return packer.startup(function(use)

@@ -1,7 +1,10 @@
--- [lunarVim] config.init
--- init
--- load
+-- init()
+-- - initialize xj default configuration
+-- - 
+-- load()
+-- - override configuration
 -- reload
+--
 
 
 local M = {}
@@ -13,15 +16,26 @@ function M:init()
         xj = vim.deepcopy(require("xj.core.default"))
     end
 
-    -- xlogger =  require("xj.core.logger")
-
     -- keymapping
+    -- require("xj.general.keymappings")
+    
     -- options
+    -- require("xj.general.options")
+
     -- autocmds
+    -- require("xj.general.autocmds")
+
+    -- plugins
+    require("xj.core.plugin"):config()
+
     -- lsp config
+    -- require("xj.lsp")
+
 end
 
 function M:load()
+    -- config file
+    pcall(require,"xj.config")
 end
 
 function M:reload()
