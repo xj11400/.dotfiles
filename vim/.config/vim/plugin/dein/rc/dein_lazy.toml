@@ -2,15 +2,18 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
+
+[[plugins]]
 repo = 'arcticicestudio/nord-vim'
-hook_add = 'colorscheme nord'
+#hook_add = 'colorscheme nord'
 
 [[plugins]]
 repo = 'psliwka/vim-smoothie'
 
 #[[plugins]]
-#repo = 'scrooloose/nerdtree'
-#hook_add = 'map <leader>e :NERDTreeToggle<CR>'
+repo = 'scrooloose/nerdtree'
+hook_add = 'map <leader>e :NERDTreeToggle<CR>'
 
 [[plugins]]
 repo = 'simeji/winresizer'

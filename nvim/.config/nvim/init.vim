@@ -4,7 +4,7 @@
 
 " general
 " -------
-source $HOME/.config/vim/vimrc.vim
+source $HOME/.config/vim/general/init.vim
 " lua require('core')
 lua require('xj')
 
