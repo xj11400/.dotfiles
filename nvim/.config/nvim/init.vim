@@ -1,21 +1,6 @@
 "
-"
-" 
+" nvim  init.vim
+" ============================================
 
-" general
-" -------
 source $HOME/.config/vim/general/init.vim
-" lua require('core')
 lua require('xj')
-
-" ui
-" --
-
-" editor
-" ------
-
-" plugin
-" ------
-" lua require('plugins')
-" require('plugins')
-

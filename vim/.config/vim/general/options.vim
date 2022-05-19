@@ -9,6 +9,9 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " When opened, many features of vim will not be available.
 " THe following commands are generally used to turn off vim's vi compatible mode
 set nocompatible
+if !has("nvim")
+    set viminfo+=n~/.cache/vim/viminfo
+endif
 
 " set how many lines of history VIM has to remember
 set history=1000
@@ -48,5 +51,5 @@ set ambiwidth=double
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 關閉VIM的時候保存會話，按F122讀取會話
 set sessionoptions=buffers,sesdir,help,tabpages,winsize
-au VimLeave * mks! ~/Session.vim
-nmap <F7> :so ~/Session.vim<CR>
+au VimLeave * mks! ~/.cache/vim/session.vim
+nmap <F7> :so ~/.cache/vim/session.vim<CR>
