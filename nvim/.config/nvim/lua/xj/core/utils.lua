@@ -46,6 +46,7 @@ end
 function M.plugin_tag(plugin_full_name)
     local plugin = string.gsub(plugin_full_name,".*/(%w+)","%1")
     plugin = string.gsub(plugin,"(%w+)(%.nvim)","%1")
+    plugin = string.gsub(plugin,"(%w+)(%.lua)","%1")
     return plugin
 end
 

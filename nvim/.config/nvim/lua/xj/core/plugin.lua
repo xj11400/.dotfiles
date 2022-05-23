@@ -6,7 +6,6 @@ local logger =  require("xj.core.logger")
 --- init
 function M:init()
     -- Add Packer commands because we are not loading it at startup
-    --- new neovim api 0.7
     local user_cmd = vim.api.nvim_create_user_command
     local packer_cmd = function(callback)
        return function()

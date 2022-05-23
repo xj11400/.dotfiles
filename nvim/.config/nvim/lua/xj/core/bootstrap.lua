@@ -7,6 +7,12 @@ local M = {}
 
 
 function M:init()
+    -- impatient.nvim
+    local present, impatient = pcall(require, "impatient")
+    
+    if present then
+       impatient.enable_profile()
+    end
 
     -- plugin manager cmd init
     require("xj.core.plugin"):init()
