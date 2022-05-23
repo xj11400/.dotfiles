@@ -5,7 +5,7 @@ local utils = require("xj.core.utils")
 
 --- [Packer] config
 function M.config()
-    require("xj.plugins.telescope").conf()
+    require("xj.plugins.telescope").configuration()
 end
 
 --- [Packer] setup
@@ -90,7 +90,7 @@ function M.mapping()
     map("n", "<leader>fb", "<cmd> :Telescope buffers <CR>")
     map("n", "<leader>ff", "<cmd> :Telescope find_files <CR>")
     map("n", "<leader>fa", "<cmd> :Telescope find_files follow=true no_ignore=true hidden=true <CR>")
-    map("n", "<leader>cm", "<cmd> :Telescope git_commits <CR>")
+    map("n", "<leader>gc", "<cmd> :Telescope git_commits <CR>")
     map("n", "<leader>gt", "<cmd> :Telescope git_status <CR>")
     map("n", "<leader>fh", "<cmd> :Telescope help_tags <CR>")
     map("n", "<leader>fw", "<cmd> :Telescope live_grep <CR>")
@@ -101,8 +101,8 @@ function M.mapping()
     map("n", "<leader>W", "<cmd> :Telescope terms <CR>")
 end
 
---- conf
-function M.conf()
+--- configuration
+function M.configuration()
     local previewers = require "telescope.previewers"
     local sorters = require "telescope.sorters"
     local actions = require "telescope.actions"
