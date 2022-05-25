@@ -46,23 +46,21 @@ function M:config()
     local plugins = require("xj.plugins")
     utils.plugin_list_init(plugins)
 
-    --* plugin config init
-    local directories = utils.scandir(os.getenv("HOME").."/.config/nvim/lua/xj/plugins/")
+    --* find plugin config file
+    for plugin, plugin_table in pairs(xj.plugins) do
+        -- logger:debug("plugin: "..plugin)
 
-    for _, plugin_dir in pairs(directories) do
-        --logger:debug("find plugin config : "..plugin_dir)
-
-        local status, retval = pcall(require,"xj.plugins."..plugin_dir) 
+        local status, retval = pcall(require,"xj.plugins."..plugin) 
 
         if status then
-            xj.plugins[plugin_dir].config_file = retval
-            xj.plugins[plugin_dir].config = {}
-            pcall(xj.plugins[plugin_dir].config_file.init)
+            -- logger:debug("found plugin config : "..plugin)
+            plugin_table.config_file = retval
+            plugin_table.config = {}
+            pcall(plugin_table.config_file.init)
         end
     end
 
     --* load config file
-    ---*[TODO] it can't change config in xxxplugin.setup()
     local status, conf = pcall(require,"xj.config.plugin")
     if status then 
         utils.plugin_config_override(conf.plugins)
@@ -105,7 +103,6 @@ function M:setup()
     end
 
     logger:debug("plugins...setup()")
-    logger:debug(plugins)
     
     -- Packer use plugins
     return packer.startup(function(use)
@@ -148,7 +145,7 @@ function M:packer()
        end
     end
     
-    logger:debug("plugin:packer()... packer found!!")
+    logger:debug("plugin:packer()... packer found...")
     packer.init {
        display = {
           open_fn = function()
