@@ -1,6 +1,5 @@
 local M = {}
 
-
 --- [Packer] config
 function M.config()
     require("xj.plugins.telescope").configuration()
@@ -17,6 +16,7 @@ end
 function M.mapping()
     local utils = require("xj.core.utils")
     local map = utils.map
+
     map("n", "<leader>fb", "<cmd> :Telescope buffers <CR>")
     map("n", "<leader>ff", "<cmd> :Telescope find_files <CR>")
     map("n", "<leader>fa", "<cmd> :Telescope find_files follow=true no_ignore=true hidden=true <CR>")
@@ -119,14 +119,20 @@ function M.configuration()
             },
         },
     }, xj.plugins.telescope.config)
+  
+    -- plugin setup
+    local load_ok, plugin = pcall( require, "telescope") 
 
-    local telescope = require "telescope"
+    -- if not load_ok then
+    --     logger:error("Failed to load"..telescope)
+    --     return
+    -- end
 
     -- local logger = require("xj.core.logger")
-    -- logger:debug("config plugin : "..telescope)
+    -- logger:debug("config plugin : telescope...xxx")
     -- logger:debug(xj.plugins.telescope.config)
 
-    telescope.setup(xj.plugins.telescope.config)
+    plugin.setup(xj.plugins.telescope.config)
   
     if xj.plugins.project and xj.plugins.project.active then
       pcall(function()
@@ -145,6 +151,5 @@ function M.configuration()
     end
 
 end
-
 
 return M
