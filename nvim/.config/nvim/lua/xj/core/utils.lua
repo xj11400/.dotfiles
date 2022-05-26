@@ -73,7 +73,7 @@ function M.plugin_config_override(configs)
 
             for tag,conf in pairs(v) do
                 if tag == "config" then
-                    xj.plugins[k].config = vim.tbl_extend("force",xj.plugins[k].config,conf)
+                    xj.plugins[k].config = vim.tbl_deep_extend("force",xj.plugins[k].config,conf)
                 else
                     xj.plugins[k][tag] = conf
                 end
