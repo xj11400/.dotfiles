@@ -104,7 +104,12 @@ local plugins = {
         "lewis6991/gitsigns.nvim",
         event = "BufRead",
     },
-
+    {
+        "rcarriga/nvim-notify",
+        requires = {
+            "nvim-telescope/telescope.nvim"
+        },
+    },
     --[[
         
     --]]
