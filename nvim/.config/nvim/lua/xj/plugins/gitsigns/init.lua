@@ -125,7 +125,7 @@ function M.configuration()
     local load_ok, plugin = pcall( require, "gitsigns") 
 
     if not load_ok then
-        logger:error("Failed to load"..gitsigns)
+        logger:error("Failed to load"..plugin)
         return
     end
 
