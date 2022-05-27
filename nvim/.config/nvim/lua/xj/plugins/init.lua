@@ -54,26 +54,56 @@
 -- }
 
 local plugins = {
-    -- general
-   { "NvChad/extensions" },
-   { "nvim-lua/plenary.nvim" },
-   { "lewis6991/impatient.nvim" },
-   { "nathom/filetype.nvim" },
-   {
-      "wbthomason/packer.nvim",
-      event = "VimEnter",
-   },
+    --[[
+        
+    --]]
+    -- packer manage itself
+    {
+       "wbthomason/packer.nvim",
+       event = "VimEnter",
+    },
 
-    --
-   { 
-       "nvim-telescope/telescope.nvim",
-       requires = {
-          "nvim-lua/plenary.nvim",
-          --"kyazdani42/nvim-web-devicons"
-        },
-       module = "telescope",
-       cmd = "Telescope",
-   },
+    -- useful lua functions used in lots of plugins
+    { "nvim-lua/plenary.nvim" },
+
+    -- This plugin does several things to speed loading Lua modules and files.
+    -- impatient needs to be setup before any other lua plugin is loaded
+    { "lewis6991/impatient.nvim" },
+
+    -- An implementation of the Popup API from vim in Neovim
+    { "nvim-lua/popup.nvim" },
+
+    -- Icons
+    { "kyazdani42/nvim-web-devicons" },
+
+    -- Telescope
+    { 
+        "nvim-telescope/telescope.nvim",
+        requires = {
+           "nvim-lua/plenary.nvim",
+           "kyazdani42/nvim-web-devicons"
+         },
+        module = "telescope",
+        cmd = "Telescope",
+    },
+
+    -- file explorer
+    {
+        "kyazdani42/nvim-tree.lua",
+        -- requires = {
+        --    "kyazdani42/nvim-web-devicons"    -- for file icon
+        -- },
+        -- tag = 'nightly',    -- optional, updated every week
+    },
+
+    -- 
+    { "psliwka/vim-smoothie" },
+-----------------------------------------------------------------------
+    { "nathom/filetype.nvim" },
+
+    --[[
+        
+    --]]
 
 }
 
