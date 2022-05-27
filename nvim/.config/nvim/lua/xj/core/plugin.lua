@@ -48,12 +48,12 @@ function M:config()
 
     --* find plugin config file
     for plugin, plugin_table in pairs(xj.plugins) do
-        -- logger:debug("plugin: "..plugin)
+        logger:debug("plugin: "..plugin)
 
         local status, retval = pcall(require,"xj.plugins."..plugin) 
 
         if status then
-            -- logger:debug("found plugin config : "..plugin)
+            logger:debug("found plugin config : "..plugin)
             plugin_table.config_file = retval
             plugin_table.config = {}
             pcall(plugin_table.config_file.init)
