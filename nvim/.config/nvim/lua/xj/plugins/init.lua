@@ -100,6 +100,10 @@ local plugins = {
     { "psliwka/vim-smoothie" },
 -----------------------------------------------------------------------
     { "nathom/filetype.nvim" },
+    { 
+        "lewis6991/gitsigns.nvim",
+        event = "BufRead",
+    },
 
     --[[
         
