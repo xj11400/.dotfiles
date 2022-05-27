@@ -45,7 +45,7 @@ function M.configuration()
     local load_ok, plugin = pcall( require, "PLUGIN_NAME") 
 
     if not load_ok then
-        logger:error("Failed to load"..PLUGIN_NAME)
+        logger:error("Failed to load"..plugin)
         return
     end
 
