@@ -39,7 +39,7 @@ function M.configuration()
   
     xj.plugins.telescope.config = vim.tbl_deep_extend("force", {
         defaults = {
-            prompt_prefix = " ",
+            prompt_prefix = " ",
             selection_caret = " ",
             entry_prefix = "  ",
             initial_mode = "insert",
