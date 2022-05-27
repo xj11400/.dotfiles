@@ -7,6 +7,13 @@ logger:debug("load config plugin...")
 local M ={}
 
 M.plugins = {
+--     telescope = {
+--         config = {
+--             defaults = {
+--                 prompt_prefix = "X ",
+--             }
+--         }
+--     }
 }
 
 return M
