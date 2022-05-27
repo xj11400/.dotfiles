@@ -61,6 +61,8 @@ function M.plugin_list_init(plugins)
         xj.plugins[plugin] = {
             active = true
         }
+
+        xj.plugins[plugin].config = {}
     end
 end
 

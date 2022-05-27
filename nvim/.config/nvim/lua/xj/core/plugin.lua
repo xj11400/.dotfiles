@@ -46,6 +46,12 @@ function M:config()
     local plugins = require("xj.plugins")
     utils.plugin_list_init(plugins)
 
+    --* load config file
+    local status, conf = pcall(require,"xj.config.plugin")
+    if status then 
+        utils.plugin_config_override(conf.plugins)
+    end
+
     --* find plugin config file
     for plugin, plugin_table in pairs(xj.plugins) do
         logger:debug("plugin: "..plugin)
@@ -55,15 +61,8 @@ function M:config()
         if status then
             logger:debug("found plugin config : "..plugin)
             plugin_table.config_file = retval
-            plugin_table.config = {}
             pcall(plugin_table.config_file.init)
         end
-    end
-
-    --* load config file
-    local status, conf = pcall(require,"xj.config.plugin")
-    if status then 
-        utils.plugin_config_override(conf.plugins)
     end
 
 end
