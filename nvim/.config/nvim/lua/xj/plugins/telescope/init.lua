@@ -123,10 +123,10 @@ function M.configuration()
     -- plugin setup
     local load_ok, plugin = pcall( require, "telescope") 
 
-    -- if not load_ok then
-    --     logger:error("Failed to load"..telescope)
-    --     return
-    -- end
+    if not load_ok then
+        logger:error("Failed to load"..plugin)
+        return
+    end
 
     -- local logger = require("xj.core.logger")
     -- logger:debug("config plugin : telescope...xxx")
