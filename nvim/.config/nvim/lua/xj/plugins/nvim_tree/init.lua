@@ -15,8 +15,10 @@ end
 --- init config
 function M.init()
 
--- [TODO] which key
--- xj.plugins.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" }
+    -- [TODO] which key
+    if xj.plugins.which_key then
+        xj.plugins.which_key.mappings["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" }
+    end
 
 end
 
@@ -189,7 +191,7 @@ function M.configuration()
     local load_ok, plugin = pcall( require, "nvim-tree") 
 
     if not load_ok then
-        logger:error("Failed to load"..nvim_tree)
+        logger:error("Failed to load"..plugin)
         return
     end
 
@@ -220,9 +222,9 @@ function M.configuration()
         }
     end
 
-    local logger = require("xj.core.logger")
-    logger:debug("config plugin : nvim_tree")
-    logger:debug(xj.plugins.nvim_tree.config)
+    -- local logger = require("xj.core.logger")
+    -- logger:debug("config plugin : nvim_tree")
+    -- logger:debug(xj.plugins.nvim_tree.config)
 
     plugin.setup(xj.plugins.nvim_tree.config.setup)
 
