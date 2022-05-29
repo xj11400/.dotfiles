@@ -34,7 +34,8 @@ end
 --- configuration
 function M.configuration()
 
-    local vim_show_icons = xj.use_icons and 1 or 0
+    -- local vim_show_icons = xj.use_icons and 1 or 0
+    local vim_show_icons = xj.use_icons and true or false
 
     xj.plugins.nvim_tree.config = vim.tbl_deep_extend("force", {
         on_config_done = nil,
@@ -94,6 +95,10 @@ function M.configuration()
                 signcolumn = "yes"
             },
             renderer = {
+                highlight_git = true,
+                root_folder_modifier = ":t",
+                highlight_opened_files = "none",
+                add_trailing = false,
                 indent_markers = {
                     enable = false,
                     icons = {
@@ -103,8 +108,34 @@ function M.configuration()
                     }
                 },
                 icons = {
-                    webdev_colors = xj.use_icons
-                }
+                    webdev_colors = xj.use_icons,
+                    show= {
+                        git = vim_show_icons,
+                        folder = vim_show_icons,
+                        file = vim_show_icons,
+                        folder_arrow = vim_show_icons
+                    },
+                    glyphs = {
+                        default = "",
+                        symlink = "",
+                        git = {
+                            unstaged = "",
+                            staged = "S",
+                            unmerged = "",
+                            renamed = "➜",
+                            deleted = "",
+                            untracked = "U",
+                            ignored = "◌"
+                        },
+                        folder = {
+                            default = "",
+                            open = "",
+                            empty = "",
+                            empty_open = "",
+                            symlink = ""
+                        }
+                    },
+                },
             },
             filters = {
                 dotfiles = false,
@@ -148,44 +179,12 @@ function M.configuration()
                 }
             }
         },
-        global = {
-            show_icons = {
-                git = vim_show_icons,
-                folders = vim_show_icons,
-                files = vim_show_icons,
-                folder_arrows = vim_show_icons
-            },
-            git_hl = 1,
-            root_folder_modifier = ":t",
-            highlight_opened_files = 0,
-            add_trailing = 0,
-            icons = {
-                default = "",
-                symlink = "",
-                git = {
-                    unstaged = "",
-                    staged = "S",
-                    unmerged = "",
-                    renamed = "➜",
-                    deleted = "",
-                    untracked = "U",
-                    ignored = "◌"
-                },
-                folder = {
-                    default = "",
-                    open = "",
-                    empty = "",
-                    empty_open = "",
-                    symlink = ""
-                }
-            }
-        },
     }, xj.plugins.nvim_tree.config)
   
     -- nvim_tree global setting
-    for opt, val in pairs(xj.plugins.nvim_tree.config.global) do
-        vim.g["nvim_tree_" .. opt] = val
-    end
+    -- for opt, val in pairs(xj.plugins.nvim_tree.config.global) do
+    --     vim.g["nvim_tree_" .. opt] = val
+    -- end
 
     -- plugin setup
     local load_ok, plugin = pcall( require, "nvim-tree") 
