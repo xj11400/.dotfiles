@@ -30,7 +30,7 @@ function M.configuration()
   
     xj.plugins.nvim_notify.config = vim.tbl_deep_extend("force", {
         ---@usage Animation style one of { "fade", "slide", "fade_in_slide_out", "static" }
-        stages = "slide",
+        stages = xj.colorscheme and "fade_in_slide_out" or "static",
 
             ---@usage Function called when a new window is opened, use for changing win settings/config
         on_open = nil,
