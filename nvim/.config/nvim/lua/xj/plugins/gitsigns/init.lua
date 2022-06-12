@@ -66,19 +66,19 @@ function M.configuration()
             },
             delete = {
                 hl = "GitSignsDelete",
-                text = "契",
+                text = "_",
                 numhl = "GitSignsDeleteNr",
                 linehl = "GitSignsDeleteLn",
             },
             topdelete = {
                 hl = "GitSignsDelete",
-                text = "契",
+                text = "‾",
                 numhl = "GitSignsDeleteNr",
                 linehl = "GitSignsDeleteLn",
             },
             changedelete = {
                 hl = "GitSignsChange",
-                text = "▎",
+                text = "~",
                 numhl = "GitSignsChangeNr",
                 linehl = "GitSignsChangeLn",
             },
