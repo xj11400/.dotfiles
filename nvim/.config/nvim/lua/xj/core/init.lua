@@ -9,7 +9,7 @@ require("xj.core.bootstrap"):init()
 -- config
 -- - load temp setting config. eg. temp disable
 -- - set all config to nvim
--- require("xj.core.config"):load()
+require("xj.core.config"):load()
 
 
 logger = require("xj.core.logger")
