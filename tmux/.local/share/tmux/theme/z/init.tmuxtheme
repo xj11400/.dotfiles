@@ -1,0 +1,117 @@
+#
+# Basic theme
+#
+
+# z format options
+set -gu @z-status-left-area-left-format
+set -gu @z-status-left-area-middle-format
+set -gu @z-status-left-area-right-format
+set -gu @z-status-right-area-left-format
+set -gu @z-status-right-area-middle-format
+set -gu @z-status-right-area-right-format
+set -gu @z-window-status-current-format
+set -gu @z-window-status-format
+
+# Customizable prefixes and suffixes for @z-* format options
+set -gu @z-status-left-area-left-prefix
+set -gu @z-status-left-area-left-suffix
+set -gu @z-status-left-area-middle-prefix
+set -gu @z-status-left-area-middle-suffix
+set -gu @z-status-left-area-right-prefix
+set -gu @z-status-left-area-right-suffix
+set -gu @z-status-right-area-left-prefix
+set -gu @z-status-right-area-left-suffix
+set -gu @z-status-right-area-middle-prefix
+set -gu @z-status-right-area-middle-suffix
+set -gu @z-status-right-area-right-prefix
+set -gu @z-status-right-area-right-suffix
+set -gu @z-window-status-current-prefix
+set -gu @z-window-status-current-suffix
+set -gu @z-window-status-prefix
+set -gu @z-window-status-suffix
+
+# Apply prefixes and suffixes to @z-* format options
+set -gu @z-status-left-area-left-format
+set -gu @z-status-left-area-middle-format
+set -gu @z-status-left-area-right-format
+set -gu @z-status-right-area-left-format
+set -gu @z-status-right-area-middle-format
+set -gu @z-status-right-area-right-format
+set -gu @z-window-status-current-format
+set -gu @z-window-status-format
+
+# Theme
+set -gu @theme-clock-mode-colour
+set -gu @theme-clock-mode-style
+set -gu @theme-display-panes-active-colour
+set -gu @theme-display-panes-colour
+set -gu @theme-message-bg
+set -gu @theme-message-command-bg
+set -gu @theme-message-command-fg
+set -gu @theme-message-fg
+set -gu @theme-mode-bg
+set -gu @theme-mode-fg
+set -gu @theme-pane-active-border-bg
+set -gu @theme-pane-active-border-fg
+set -gu @theme-pane-border-bg
+set -gu @theme-pane-border-fg
+set -gu @theme-status-bg
+set -gu @theme-status-fg
+set -gu @theme-status-interval
+set -gu @theme-status-justify
+set -gu @theme-status-left
+set -gu @theme-status-left-bg
+set -gu @theme-status-left-fg
+set -gu @theme-status-left-length
+set -gu @theme-status-right
+set -gu @theme-status-right-bg
+set -gu @theme-status-right-fg
+set -gu @theme-status-right-length
+set -gu @theme-window-status-activity-bg
+set -gu @theme-window-status-activity-fg
+set -gu @theme-window-status-current-bg
+set -gu @theme-window-status-current-fg
+set -gu @theme-window-status-current-format
+set -gu @theme-window-status-format
+set -gu @theme-window-status-separator
+
+# Customizable prefixes and suffixes for @theme-* format
+set -gu @theme-status-left-prefix
+set -gu @theme-status-left-suffix
+set -gu @theme-status-right-prefix
+set -gu @theme-status-right-suffix
+set -gu @theme-window-status-current-prefix
+set -gu @theme-window-status-current-suffix
+set -gu @theme-window-status-prefix
+set -gu @theme-window-status-suffix
+
+# Apply prefixes and suffixes to @theme-* format options
+set -gu @theme-status-left
+set -gu @theme-status-right
+set -gu @theme-window-status-current-format
+set -gu @theme-window-status-format
+
+# Apply @theme-* options to Tmux
+set -gu display-panes-active-colour
+set -gu display-panes-colour
+set -gu message-command-style
+set -gu message-style
+set -gu status-interval
+set -gu status-justify
+set -gu status-left
+set -gu status-left-length
+set -gu status-left-style
+set -gu status-right
+set -gu status-right-length
+set -gu status-right-style
+set -gu status-style
+set -gu clock-mode-colour
+set -gu clock-mode-style
+set -gu mode-style
+set -gu pane-active-border-style
+set -gu pane-border-style
+set -gu window-status-activity-style
+set -gu window-status-current-format
+set -gu window-status-current-style
+set -gu window-status-format
+set -gu window-status-separator
