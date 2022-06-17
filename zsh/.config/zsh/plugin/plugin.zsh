@@ -13,4 +13,4 @@ fi
 
 
 # plugin config
-x_zsh_require plugin/config
+x_zsh_require_dir plugin/config

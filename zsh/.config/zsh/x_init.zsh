@@ -25,13 +25,17 @@ function x_zsh_load(){
 }
 
 function x_zsh_require(){
+    source $X_ZSH_CONFIG_HOME/$1/$1.zsh
+}
+
+function x_zsh_require_dir(){
     for file in `ls $X_ZSH_CONFIG_HOME/$1/*.zsh`
     do
         source $file
     done
 }
 
-function x_zsh_x_require(){
+function x_zsh_require_x(){
     for file in `ls $X_ZSH_CONFIG_HOME/$1/*.x.zsh`
     do
         source $file
@@ -58,13 +62,14 @@ x_zsh_require theme
 x_zsh_require plugin
 
 # install
-x_zsh_require install
+x_zsh_require_dir install
 
 # custom
-x_zsh_require custom
+x_zsh_require_dir custom
 
 # unset function
-unset -f x_zsh_x_require
 unset -f x_zsh_require
+unset -f x_zsh_require_x
+unset -f x_zsh_require_dir
 unset -f x_zsh_load
 
