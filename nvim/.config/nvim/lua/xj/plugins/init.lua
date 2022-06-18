@@ -104,16 +104,49 @@ local plugins = {
         "lewis6991/gitsigns.nvim",
         event = "BufRead",
     },
+
+    -- notify
     {
         "rcarriga/nvim-notify",
         requires = {
             "nvim-telescope/telescope.nvim"
         },
     },
+
+    -- status line
+    {
+        "nvim-lualine/lualine.nvim",
+    },
+
+
+    -- buffer line
+    {
+        "akinsho/bufferline.nvim",
+        branch = "main",
+        event = "BufWinEnter",
+    },
+
+    -- 
+    --- - {
+    --- -     "nvim-treesitter/nvim-treesitter",
+    --- - },
+
+
+
+
+
     --[[
         
     --]]
-
+    -- color temp
+--     {
+--         "lunarvim/onedarker.nvim",
+--         config = function()
+--           pcall(function()
+--               require("onedarker").setup()
+--           end)
+--         end,
+--     },
 }
 
 return plugins
