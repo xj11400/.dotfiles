@@ -7,9 +7,10 @@
 --     return
 -- end
 
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 -- local status_ok, theme = pcall(require,"xj.colors."..colortheme)
 -- pcall(require,"xj.colors."..colortheme)
 
 ---------------------------------------------NvChad
+require("xj.colors.theme.onedarker.lua.onedarker").setup()
