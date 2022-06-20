@@ -60,13 +60,13 @@ set -goq  @theme-status-bg colour236
 set -goq  @theme-status-fg colour250
 set -goq  @theme-status-interval 1
 set -goq  @theme-status-justify centre
-set -goqF @theme-status-left "#{@z-status-left-area-left-format} #[fg=white]• #[fg=yellow]#{@z-status-left-area-middle-format} #[fg=cyan]#{@z-status-left-area-right-format}"
+set -goqF @theme-status-left "#{@z-status-left-area-left-format}#[fg=colour240] • #[fg=colour244]#{@z-status-left-area-middle-format} #[fg=colour245]#{@z-status-left-area-right-format}"
 set -goq  @theme-status-left-bg default
 set -goq  @theme-status-left-fg blue
 set -goq  @theme-status-left-length 40
-set -goqF @theme-status-right "#{@z-status-right-area-left-format} #[fg=white]| #[fg=yellow]#{@z-status-right-area-middle-format} #[fg=blue]#{@z-status-right-area-right-format}"
+set -goqF @theme-status-right "#[fg=colour244] #{@z-status-right-area-left-format} | #{@z-status-right-area-middle-format} #{@z-status-right-area-right-format}"
 set -goq  @theme-status-right-bg default
-set -goq  @theme-status-right-fg cyan
+set -goq  @theme-status-right-fg grey
 set -goq  @theme-status-right-length 40
 set -goq  @theme-window-status-activity-bg black
 set -goq  @theme-window-status-activity-fg yellow
