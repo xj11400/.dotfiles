@@ -22,7 +22,7 @@ zmodule duration-info
 # Exposes git repository status information to prompts, used by asciiship.
 zmodule git-info
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-zmodule asciiship
+# zmodule asciiship # !! conflict with powerlevel10k
 # Formats the path to the current working directory to be used by prompts.
 zmodule prompt-pwd
 
@@ -43,4 +43,4 @@ zmodule zsh-users/zsh-history-substring-search
 
 # theme
 #zmodule gitster
-zmodule $HOME/.local/share/zsh/theme/gitster
+#zmodule $HOME/.local/share/zsh/theme/gitster
