@@ -1,23 +1,22 @@
 #
-x_use "zdharma-continuum/zinit" $XDG_DATA_HOME/zinit zinit.git
-#x_use "zdharma-continuum/zinit" $XDG_DATA_HOME/zsh/zpm zinit/zinit.git
+x_use "zdharma-continuum/zinit" $XDG_DATA_HOME/zsh/zpm zinit/zinit.git
 
 # initial zinit's hash definition
-#ZINIT_HOME="$HOME/.local/share/zsh/zpm/zinit"
-#ZPFX=$ZINIT_HOME/polaris
-#declare -A ZINIT
-#ZINIT[BIN_DIR]=$ZINIT_HOME/zinit.git
-#ZINIT[HOME_DIR]="$ZINIT_HOME"
-#ZINIT[PLUGINS_DIR]=$ZINIT_HOME/plugins
-#ZINIT[COMPLETIONS_DIR]=$ZINIT_HOME/completions
-#ZINIT[SNIPPETS_DIR]=$ZINIT_HOME/snippets
-#ZINIT[ZCOMPDUMP_PATH]=$XDG_CACHE_HOME/zcompdump
-#ZINIT[COMPINIT_OPTS]=-C
-##ZINIT[MUTE_WARNINGS]=0
-##ZINIT[OPTIMIZE_OUT_DISK_ACCESSES]=0
-#ZINIT[MAN_DIR]=$ZPFX/man
+ZINIT_HOME="$HOME/.local/share/zsh/zpm/zinit"
+ZPFX=$ZINIT_HOME/polaris
+declare -gAH ZINIT
+ZINIT[BIN_DIR]=$ZINIT_HOME/zinit.git
+ZINIT[HOME_DIR]="$ZINIT_HOME"
+ZINIT[PLUGINS_DIR]=$ZINIT_HOME/plugins
+ZINIT[COMPLETIONS_DIR]=$ZINIT_HOME/completions
+ZINIT[SNIPPETS_DIR]=$ZINIT_HOME/snippets
+ZINIT[ZCOMPDUMP_PATH]=$XDG_CACHE_HOME/zcompdump
+ZINIT[COMPINIT_OPTS]=-C
+#ZINIT[MUTE_WARNINGS]=0
+#ZINIT[OPTIMIZE_OUT_DISK_ACCESSES]=0
+ZINIT[MAN_DIR]=$ZPFX/man
+
 #
-ZINIT_HOME="$HOME/.local/share/zinit"
 source "${ZINIT_HOME}/zinit.git/zinit.zsh"
 
 autoload -Uz _zinit
