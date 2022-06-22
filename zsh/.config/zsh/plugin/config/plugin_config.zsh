@@ -17,7 +17,7 @@ zstyle ':autocomplete:history-search:*' list-lines 16  # int
 
 # fast-syntax-highlighting
 # $HOME/.config/fsh
-FAST_WORK_DIR=XDG:
+#FAST_WORK_DIR=XDG:
 #FAST_HIGHLIGHT_STYLES[orig-style-alias]=93
 #FAST_HIGHLIGHT_STYLES[builtin]='fg=93'
 #FAST_HIGHLIGHT_STYLES[orig-style-unknow-token]=93
