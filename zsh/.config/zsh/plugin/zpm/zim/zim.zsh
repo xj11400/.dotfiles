@@ -2,7 +2,7 @@
 ####    zshenv
 # ------------------------------
 # Define Zim location
-: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.local/share/zsh/zpm/zim}
+ZIM_HOME=${HOME}/.local/share/zsh/zpm/zim
 
 
 # --------------------------------------------------------------------------
@@ -115,6 +115,8 @@ if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   else
     command wget -nv -O ${ZIM_HOME}/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   fi
+  # [XJ] replace zimrc path
+  sed -i 's/ztarget=\${ZDOTDIR\:-\${HOME}}\/\.zimrc/ztarget=\${ZDOTDIR\:-\${HOME}}\/\.config\/zsh\/plugin\/zpm\/zim\/\.zimrc/g' ${ZIM_HOME}/zimfw.zsh
 fi
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.config/zsh/zpm/zim/.zimrc ]]; then
   # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
