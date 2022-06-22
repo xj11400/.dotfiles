@@ -2,6 +2,9 @@
 #
 # 
 
+# plugin config
+source $X_ZSH_PLUGIN_HOME/config/pre_config.zsh
+
 # plugin manager
 
 if [[ -d "$X_ZSH_PLUGIN_HOME/zpm/$X_ZSH_PLUGIN_MANAGER" ]]
@@ -13,4 +16,5 @@ fi
 
 
 # plugin config
-x_zsh_require_dir plugin/config
+source $X_ZSH_PLUGIN_HOME/config/plugin_config.zsh
+#x_zsh_require_dir plugin/config
