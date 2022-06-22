@@ -3,7 +3,7 @@
 # 
 
 # plugin config
-source $X_ZSH_PLUGIN_HOME/config/pre_config.zsh
+source $X_ZSH_PLUGIN_HOME/pre_config.zsh
 
 # plugin manager
 
@@ -16,5 +16,5 @@ fi
 
 
 # plugin config
-source $X_ZSH_PLUGIN_HOME/config/plugin_config.zsh
+source $X_ZSH_PLUGIN_HOME/config.zsh
 #x_zsh_require_dir plugin/config
