@@ -29,40 +29,45 @@ autoload -Uz _zi
 
 # plugins
 
-# - Completions
-zi ice lucid wait as'completion'
-zi light zsh-users/zsh-completions
-
-zi ice lucid wait has'fzf'
-zi light Aloxaf/fzf-tab
-
-# - Plugins
-zi ice wait lucid atinit"ZI[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
-zi light z-shell/F-Sy-H
-
-zi ice wait lucid atload"!_zsh_autosuggest_start"
-zi load zsh-users/zsh-autosuggestions
-
-zi ice wait lucid
-zi load wfxr/forgit
+# # - Completions
+# zi ice lucid wait as'completion'
+# zi light zsh-users/zsh-completions
+# 
+# zi ice lucid wait has'fzf'
+# zi light Aloxaf/fzf-tab
+# 
+# # - Plugins
+# zi ice wait lucid atinit"ZI[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
+# zi light z-shell/F-Sy-H
+# 
+# zi ice wait lucid atload"!_zsh_autosuggest_start"
+# zi load zsh-users/zsh-autosuggestions
+# 
+# zi ice wait lucid
+# zi load wfxr/forgit
 
 # -----------------------------------------------
+# turbo mode
+
 # Fast-syntax-highlighting & autosuggestions
 
-# zi wait lucid for \
-# atinit"ZI[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
-#   z-shell/F-Sy-H \
-# atload"!_zsh_autosuggest_start" \
-#   zsh-users/zsh-autosuggestions \
-# blockf \
-#   zsh-users/zsh-completions
-# 
+zi wait lucid for \
+atinit"ZI[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
+  z-shell/F-Sy-H \
+atload"!_zsh_autosuggest_start" \
+  zsh-users/zsh-autosuggestions \
+blockf \
+  zsh-users/zsh-completions
+
 
 # wait'1' plugins
-# zi wait"1" lucid for \
-#     wfxr/forgit
-    
+zi wait"1" lucid for \
+    wfxr/forgit
+  
+zi wait"1" lucid for \
+    Aloxaf/fzf-tab
+
 # A few wait'2' plugins
-# zi wait"2" lucid for \
-#   atinit"forgit_ignore='fgi'" \
-# wfxr/forgit
+zi wait"2" lucid for \
+  atinit"forgit_ignore='fgi'" \
+wfxr/forgit
