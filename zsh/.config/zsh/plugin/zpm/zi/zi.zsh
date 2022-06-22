@@ -8,7 +8,7 @@ declare -gHA ZI
 ZI[BIN_DIR]="$X_ZSH_DATA_HOME/zpm/zi/bin"
 ZI[HOME_DIR]="$X_ZSH_DATA_HOME/zpm/zi"
 
-ZPFS="$ZI_HOME/polaris"
+ZPFX="$ZI_HOME/polaris"
 ZI[PLUGINS_DIR]="$ZI_HOME/plugins"
 ZI[COMPLETIONS_DIR]="$ZI_HOME/completions"
 ZI[SNIPPETS_DIR]="$ZI_HOME/snippets"
