@@ -41,6 +41,25 @@ set -gqF @z-status-right-area-right-format "#{@z-status-right-area-right-prefix}
 set -gqF @z-window-status-current-format "#{@z-window-status-current-prefix}#{@z-window-status-current-format}#{@z-window-status-current-suffix}"
 set -gqF @z-window-status-format "#{@z-window-status-prefix}#{@z-window-status-format}#{@z-window-status-suffix}"
 
+# prefix-highlight
+## prompt
+set -goq  @z-prefix-prefix-prompt "\\"
+set -goq  @z-prefix-copy-prompt "\["
+set -goq  @z-prefix-sync-prompt "\~"
+set -goq  @z-prefix-empty-prompt "\|"
+## style
+set -goq  @z-prefix-prefix-style "fg=blue,bg=default"
+set -goq  @z-prefix-copy-style "fg=yellow,bg=default"
+set -goq  @z-prefix-sync-style "fg=green,bg=default"
+set -goq  @z-prefix-empty-style "fg=colour244,bg=default"
+## setting
+set -gq  @z-prefix-client "#[#{@z-prefix-prefix-style}]#{?client_prefix,#{@z-prefix-prefix-prompt},}"
+set -gq  @z-prefix-pane "#[#{@z-prefix-copy-style}]#{?pane_in_mode,#{@z-prefix-copy-prompt},}"
+set -gq  @z-prefix-sync "#[#{@z-prefix-sync-style}]#{?synchronize-panes,#{@z-prefix-sync-prompt},}"
+set -gq  @z-prefix-empty "#[#{@z-prefix-empty-style}]#{?client_prefix,,#{?pane_in_mode,,#{?synchronize-panes,,#{@z-prefix-empty-prompt}}}}"
+set -gq  @z-prefix-default-style "#[default]"
+set -gqF @theme-prefix "#{@z-prefix-client}#{@z-prefix-pane}#{@z-prefix-sync}#{@z-prefix-empty}#{@z-prefix-default-style}"
+
 # Theme options
 set -goq  @theme-clock-mode-colour red
 set -goq  @theme-clock-mode-style 24
@@ -64,7 +83,7 @@ set -goqF @theme-status-left "#{@z-status-left-area-left-format}#[fg=colour240] 
 set -goq  @theme-status-left-bg default
 set -goq  @theme-status-left-fg blue
 set -goq  @theme-status-left-length 40
-set -goqF @theme-status-right "#[fg=colour244] #{@z-status-right-area-left-format} | #{@z-status-right-area-middle-format} #{@z-status-right-area-right-format}"
+set -goqF @theme-status-right "#[fg=colour244] #{@z-status-right-area-left-format} #{@theme-prefix}#[fg=colour244] #{@z-status-right-area-middle-format} #{@z-status-right-area-right-format}"
 set -goq  @theme-status-right-bg default
 set -goq  @theme-status-right-fg grey
 set -goq  @theme-status-right-length 40
