@@ -1,5 +1,5 @@
 #
-x_use "zdharma-continuum/zinit" $XDG_DATA_HOME/zsh/zpm zinit/zinit.git
+x_use "zdharma-continuum/zinit" $XDG_DATA_HOME/zsh/zpm/zinit/zinit.git
 
 # initial zinit's hash definition
 ZINIT_HOME="$HOME/.local/share/zsh/zpm/zinit"

@@ -1,5 +1,5 @@
 # check is powerlevel10k exist
-x_use "romkatv/powerlevel10k" "$X_ZSH_THEME_DATA_HOME" "powerlevel10k"
+x_use "romkatv/powerlevel10k" "$X_ZSH_THEME_DATA_HOME/powerlevel10k"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then

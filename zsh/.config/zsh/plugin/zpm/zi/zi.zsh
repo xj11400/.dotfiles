@@ -1,5 +1,5 @@
 #
-x_use "z-shell/zi" $X_ZSH_DATA_HOME/zpm zi/bin
+x_use "z-shell/zi" $X_ZSH_DATA_HOME/zpm/zi/bin
 
 ZI_HOME="${X_ZSH_DATA_HOME}/zpm/zi"
 
