@@ -34,7 +34,7 @@ autoload -Uz _zi
 # zi light zsh-users/zsh-completions
 # 
 # zi ice lucid wait has'fzf'
-# zi light Aloxaf/fzf-tab
+# zi light aloxaf/fzf-tab
 # 
 # # - Plugins
 # zi ice wait lucid atinit"ZI[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
@@ -60,13 +60,13 @@ blockf \
   zsh-users/zsh-completions
 
 
+zi ice lucid wait "1" has'fzf'
+zi light aloxaf/fzf-tab
+
 # wait'1' plugins
 zi wait"1" lucid for \
     wfxr/forgit
   
-zi wait"1" lucid for \
-    Aloxaf/fzf-tab
-
 # A few wait'2' plugins
 zi wait"2" lucid for \
   atinit"forgit_ignore='fgi'" \
