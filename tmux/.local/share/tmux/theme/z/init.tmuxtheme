@@ -115,3 +115,21 @@ set -gu window-status-current-format
 set -gu window-status-current-style
 set -gu window-status-format
 set -gu window-status-separator
+
+
+# prefix-highlight
+set -gu @z-prefix-prefix-prompt
+set -gu @z-prefix-copy-prompt
+set -gu @z-prefix-sync-prompt
+set -gu @z-prefix-empty-prompt
+set -gu @z-prefix-prefix-style
+set -gu @z-prefix-copy-style
+set -gu @z-prefix-sync-style
+set -gu @z-prefix-empty-style 
+set -gu @z-prefix-client
+set -gu @z-prefix-pane
+set -gu @z-prefix-sync
+set -gu @z-prefix-empty
+set -gu @z-prefix-default-style
+set -gu @theme-prefix
+
