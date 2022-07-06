@@ -61,8 +61,8 @@ x_zsh_require theme
 # plugin
 x_zsh_require plugin
 
-# install
-x_zsh_require_dir install
+# programs
+x_zsh_require_dir programs
 
 # custom
 x_zsh_require_dir custom
