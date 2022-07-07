@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# tmux-split-statusbar.tmux
+# helpers.tmux
+# =========================
+
+
 # --------------------- bind key ---------------------
 split_bind_key() {
   # unbind all tmux-split-statusbar related
@@ -61,7 +68,6 @@ split_statusbar_off() {
 }
 
 split_statusbar_toggle() {
-    echo "toggle func"
   local status_format_current="$(tmux show-option -gqv "status-format[0]")"
   local status_format_0_default="$(tmux show-option -gqv "status-format[6]")"
   if [[ "${status_format_current}" = "${status_format_0_default}" ]]; then
@@ -117,7 +123,6 @@ hide_status_toggle() {
 # --------------------------------- main ---------------------------------
 
 main() {
-echo "main func"
   local split_statusbar_mode="$(tmux show-option -gqv "@split-statusbar-mode")"
   local split_statusbar_mode_setto="$(tmux show-option -gqv "@split-statusbar-mode-setto")"
   local hide_statusbar_mode_setto="$(tmux show-option -gqv "@hide-statusbar-mode-setto")"
@@ -132,15 +137,11 @@ echo "main func"
   set_default_status_format
 
 
-echo "toggle flag: ${toggle_flag} "
-
   if [[ "${toggle_flag}" = "toggle" ]];then
-    echo " >> toggle flag"
     split_statusbar_toggle
   elif [[ "${toggle_flag}" = "hide" ]];then
     hide_status_toggle
   else
-    echo " >> else"
 
     #---------------- split status bar ----------------------
     if [[ "${split_statusbar_mode_setto}" = "on" ]];then
@@ -172,5 +173,4 @@ echo "toggle flag: ${toggle_flag} "
 
 }
 
-echo "call tmux"
 main "$1"

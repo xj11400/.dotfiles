@@ -28,7 +28,6 @@ main() {
   # split_status_bar
   local split_statusbar="$(tmux show-option -gqv "@z-split-statusbar")"
   if [[ "${split_statusbar}" = "on" ]];then
-    #source "$CURRENT_DIR/scripts/split_status_bar.tmux"
     tmux run-shell "$CURRENT_DIR/scripts/split_status_bar.tmux"
   fi
 }
