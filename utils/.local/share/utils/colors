@@ -17,6 +17,7 @@ function colors::help(){
     echo '  --ansi        Display ANSI colors table (default option)'
     echo '  --aixterm     Display aixterm high intensity colors table'
     echo '  --256colors   Display 256 colors table'
+    echo '  --256hex      Display 256 colors table in hex'
 }
 
 function colors::ansi(){
@@ -88,7 +89,7 @@ function colors::aixterm(){
 function colors::256-colors(){
 
     echo ""
-    echo -e -n "\e[1m256 Colors\e0m :\n"
+    echo -e -n "\e[1m256 Colors\e[0m :\n"
     echo -e -n "  foreground: ESC[38;5;{\e[38;5;196m0-255\e[0m}m\n"
     echo -e -n "  background: ESC[48;5;{\e[38;5;196m0-255\e[0m}m\n"
 
@@ -124,6 +125,53 @@ function colors::256-colors(){
     do
         bg=$(printf "48;5;%dm" $c)
         printf " \e[%s %3s \e[0m" $bg $c
+        if [ "$c" = '243' ];then
+            echo
+        fi
+    done
+    echo -e "\n"
+
+}
+
+function colors::256-hex(){
+
+    echo ""
+    echo -e -n "\e[1m256 Colors\e[0m :\n"
+    echo -e -n "  foreground: ESC[38;5;{\e[38;5;196m00-ff\e[0m}m\n"
+    echo -e -n "  background: ESC[48;5;{\e[38;5;196m00-ff\e[0m}m\n"
+
+    # standard colors
+    echo ""
+    echo -e " \e[1mStandard Colors\e[0m :"
+    for c in $(seq 0 15)
+    do
+        bg=$(printf "48;5;%dm" $c)
+        printf " \e[%s %02X \e[0m" $bg $c
+        if [ "$c" = '7' ];then
+            echo
+        fi
+    done
+    echo ""
+
+    # 216 colors
+    echo
+    echo -e " \e[1m216 Colors\e[0m :"
+    for v in $(seq 16 12 231)
+    do
+        for h in $(seq $v 1 $(($v+11)))
+        do
+            bg=$(printf "48;5;%dm" $h)
+            printf " \e[%s %2X \e[0m" $bg $h
+        done
+        echo ""
+    done
+    echo ""
+
+    echo -e " \e[1mGrayscale Colors\e[0m :"
+    for c in $(seq 232 255)
+    do
+        bg=$(printf "48;5;%dm" $c)
+        printf " \e[%s %2X \e[0m" $bg $c
         if [ "$c" = '243' ];then
             echo
         fi
@@ -337,6 +385,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --256colors)
       colors::256-colors
+      shift # past argument
+      ;;
+    --256hex)
+      colors::256-hex
       shift # past argument
       ;;
     --all)
