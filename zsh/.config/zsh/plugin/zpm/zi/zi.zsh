@@ -53,7 +53,7 @@ autoload -Uz _zi
 
 zi wait lucid for \
 atinit"ZI[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
-  z-shell/F-Sy-H \
+   z-shell/F-Sy-H \
 atload"!_zsh_autosuggest_start" \
   zsh-users/zsh-autosuggestions \
 blockf \

@@ -1,2 +1,1 @@
 
-FAST_WORK_DIR=XDG:

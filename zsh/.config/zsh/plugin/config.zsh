@@ -16,11 +16,8 @@ zstyle ':autocomplete:*' default-context history-incremental-search-backward
 zstyle ':autocomplete:history-search:*' list-lines 16  # int
 
 # fast-syntax-highlighting
-# $HOME/.config/fsh
-#FAST_WORK_DIR=XDG
-#FAST_HIGHLIGHT_STYLES[orig-style-alias]=93
-#FAST_HIGHLIGHT_STYLES[builtin]='fg=93'
-#FAST_HIGHLIGHT_STYLES[orig-style-unknow-token]=93
+# https://z.digitalclouds.dev/ecosystem/plugins/f-sy-h
+FAST_WORK_DIR=$HOME/.config/fsh
 
 # fzf-tab
 #zstyle ":completion:*" matcher-list \
