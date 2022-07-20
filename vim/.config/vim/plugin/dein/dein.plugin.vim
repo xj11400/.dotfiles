@@ -3,6 +3,20 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
+" check dein
+" ----------
+let s:plugin_home = expand('~/.local/share/vim/dein/repos/github.com/Shougo/dein.vim')
+
+if !isdirectory(s:plugin_home)
+    let s:plugin_src = 'https://github.com/Shougo/dein.vim.git'
+
+    " clone dein from github
+    echo 'clone dein from github ...'
+    exec '!git clone ' .. s:plugin_src .. ' ' .. s:plugin_home .. ' --depth 1'
+endif
+
+" config dein
+" -----------
 let s:dein_dir = '~/.local/share/vim/dein'
 
 " Add the dein installation directory into runtimepath
@@ -10,14 +24,16 @@ let s:dein_dir = '~/.local/share/vim/dein'
 let &runtimepath = &runtimepath.','.s:dein_dir.'/repos/github.com/Shougo/dein.vim'
 
 " set rc_dir and toml path
-let g:rc_dir = expand('~/.config/vim/plugin/dein/rc/')
-let s:toml = g:rc_dir . 'dein.toml'
-let s:lazy_toml = g:rc_dir . 'dein_lazy.toml'
+let s:rc_dir = expand('~/.config/vim/plugin/dein/rc/')
+let s:toml = s:rc_dir . 'dein.toml'
+let s:lazy_toml = s:rc_dir . 'dein_lazy.toml'
 
+" add plugins
+" -----------
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  "call dein#add(s:dein_dir.'/repos/github.com/Shougo/dein.vim')
+    "call dein#add(s:dein_dir.'/repos/github.com/Shougo/dein.vim')
 
     call dein#load_toml(s:toml, {'lazy':0})
     call dein#load_toml(s:lazy_toml, {'lazy':1})
