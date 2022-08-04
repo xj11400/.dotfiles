@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# z split staus bar
+# fork : https://github.com/charlietag/tmux-split-statusbar
 # tmux-split-statusbar.tmux
 # helpers.tmux
 # =========================
@@ -13,12 +15,12 @@ split_bind_key() {
   # Define bind key for status bar togle
   local bind_key="$(tmux show-option -gqv "@split-statusbar-bindkey")"
   [[ -z "${bind_key}" ]] && bind_key="M-s"
-  tmux bind-key ${bind_key} run-shell '~/.local/share/tmux/theme/z/scripts/split_status_bar.tmux toggle'
+  tmux bind-key ${bind_key} run-shell ${BASH_SOURCE}' toggle'
 
   # Define bind key for status left right toggle
   local bind_key_hide="$(tmux show-option -gqv "@split-status-hide-bindkey")"
   [[ -z "${bind_key_hide}" ]] && bind_key_hide="M-d"
-  tmux bind-key ${bind_key_hide} run-shell '~/.local/share/tmux/theme/z/scripts/split_status_bar.tmux hide'
+  tmux bind-key ${bind_key_hide} run-shell ${BASH_SOURCE}' hide'
 }
 
 # --------------------- Initialize ---------------------

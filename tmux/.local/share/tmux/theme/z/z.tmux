@@ -19,6 +19,13 @@ main() {
   local theme
   theme="$(get-tmux-option "@z" "z")"
 
+  # prefix-highlight-mod
+  local prefix_highlight="$(tmux show-option -gqv "@z-prefix")"
+  if [[ "${prefix_highlight}" = "on" ]];then
+    tmux run-shell "$CURRENT_DIR/scripts/prefix_highlight_mod.tmux"
+  fi
+
+  # load theme
   if [ -f "$CURRENT_DIR/${theme}.tmuxtheme" ]; then
     tmux source-file "$CURRENT_DIR/${theme}.tmuxtheme"
   else
@@ -28,7 +35,7 @@ main() {
   # split_status_bar
   local split_statusbar="$(tmux show-option -gqv "@z-split-statusbar")"
   if [[ "${split_statusbar}" = "on" ]];then
-    tmux run-shell "$CURRENT_DIR/scripts/split_status_bar.tmux"
+    tmux run-shell "$CURRENT_DIR/scripts/split_status_bar_mod.tmux"
   fi
 }
 

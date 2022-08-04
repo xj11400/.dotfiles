@@ -1,7 +1,8 @@
 #
 # Z
-# fork form Basic theme
-#
+# base on jimeh/tmux-themepack : basic.tmuxtheme
+# https://github.com/jimeh/tmux-themepack
+# ======================================================
 
 # z format options
 set -goq @z-status-left-area-left-format "#S"
@@ -91,11 +92,21 @@ set -gq  @z-prefix-pane "#[#{@z-prefix-copy-style}]#{?pane_in_mode,#{@z-prefix-c
 set -gq  @z-prefix-sync "#[#{@z-prefix-sync-style}]#{?synchronize-panes,#{@z-prefix-sync-prompt},}"
 set -gq  @z-prefix-empty "#[#{@z-prefix-empty-style}]#{?client_prefix,,#{?pane_in_mode,,#{?synchronize-panes,,#{@z-prefix-empty-prompt}}}}"
 set -gq  @z-prefix-default-style "#[default]"
-set -gqF @theme-prefix "#{@z-prefix-client}#{@z-prefix-pane}#{@z-prefix-sync}#{@z-prefix-empty}#{@z-prefix-default-style}"
+set -gq  @z-prefix-output-prefix " "
+set -gq  @z-prefix-output-suffix " "
+
+%if "#{==:#{@z-prefix},on}"
+set -gqF @theme-prefix "#{@prefix_highlight}"
+%else
+set -gqF @theme-prefix "#{@z-prefix-output-prefix}#{@z-prefix-client}#{@z-prefix-pane}#{@z-prefix-sync}#{@z-prefix-empty}#{@z-prefix-default-style}#{@z-prefix-output-suffix}"
+%endif
 
 # set @theme-status
 set -goqF @theme-status-left "#{@z-status-left-area-left-format}#[fg=colour240] • #[fg=colour244]#{@z-status-left-area-middle-format} #[fg=colour245]#{@z-status-left-area-right-format}"
-set -goqF @theme-status-right "#[fg=colour244] #{@z-status-right-area-left-format} #{@theme-prefix}#[fg=colour244] #{@z-status-right-area-middle-format} #{@z-status-right-area-right-format}"
+set -goqF @theme-status-right "#[fg=colour244] #{@z-status-right-area-left-format}#{@theme-prefix}#[fg=colour244]#{@z-status-right-area-middle-format} #{@z-status-right-area-right-format}"
+
+## config with prefix_highlight
+#set -goqF @theme-status-right "#[fg=colour244] #{@z-status-right-area-left-format}#{@prefix_highlight}#[fg=colour244]#{@z-status-right-area-middle-format} #{@z-status-right-area-right-format}"
 
 # Customizable prefixes and suffixes for @theme-* format options
 set -goq @theme-status-left-prefix ""

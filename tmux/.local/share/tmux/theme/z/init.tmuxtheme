@@ -133,3 +133,23 @@ set -gu @z-prefix-empty
 set -gu @z-prefix-default-style
 set -gu @theme-prefix
 
+# prefix-hi
+set -gu @prefix_highlight_prefix_prompt
+set -gu @prefix_highlight_copy_prompt
+set -gu @prefix_highlight_sync_prompt
+set -gu @prefix_highlight_empty_prompt
+set -gu @prefix_highlight_fg
+set -gu @prefix_highlight_bg
+set -gu @prefix_highlight_attr
+set -gu @prefix_highlight_copy_mode_attr
+set -gu @prefix_highlight_sync_mode_attr
+set -gu @prefix_highlight_empty_attr
+set -gu @prefix_highlight_output_prefix
+set -gu @prefix_highlight_output_suffix
+set -gu @prefix_highlight_show_copy_mode
+set -gu @prefix_highlight_show_sync_mode
+set -gu @prefix_highlight_empty_has_affixes
+set -gu @z-prefix-client
+set -gu @z-prefix-pane
+set -gu @z-prefix-sync
+set -gu @z-prefix-empty
