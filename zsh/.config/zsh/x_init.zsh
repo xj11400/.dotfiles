@@ -45,6 +45,7 @@ function x_zsh_require_x(){
 # pre load
 # ========
 source $X_ZSH_CONFIG_HOME/utils/os.zsh
+source $X_ZSH_CONFIG_HOME/platform/${MY_DISTRO:l}.zsh
 
 # load files
 # ==========

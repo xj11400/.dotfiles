@@ -1,5 +1,3 @@
-source ~/.config/zsh/custom/wsl.zsh
-
 ## path
 alias vimplug="vim ~/.config/vim/dein.plugin.vim"
 alias vimplugconf="vim ~/.config/vim/plugin.conf.vim"
