@@ -66,7 +66,9 @@ x_zsh_require plugin
 x_zsh_require_dir programs
 
 # custom
-x_zsh_require_dir custom
+if [[ -d "$XDG_CONFIG_HOME/zsh/custom" ]];then
+    x_zsh_require_dir custom
+fi
 
 # unset function
 unset -f x_zsh_require
