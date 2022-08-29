@@ -47,6 +47,11 @@ function x_zsh_require_x(){
 source $X_ZSH_CONFIG_HOME/utils/os.zsh
 source $X_ZSH_CONFIG_HOME/platform/${MY_DISTRO:l}.zsh
 
+# custom - pre
+if [[ -f "$X_ZSH_CONFIG_HOME/custom/pre_load.zsh" ]];then
+    source $X_ZSH_CONFIG_HOME/custom/pre_load.zsh
+fi
+
 # load files
 # ==========
 
