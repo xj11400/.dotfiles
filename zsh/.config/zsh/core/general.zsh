@@ -30,3 +30,6 @@ export TERM=xterm-256color
 if [[ "$MY_OS" == "Darwin" ]];then
     export LC_ALL=en_US.UTF-8
 fi
+
+#
+alias dot='cd ~/.dotfiles'

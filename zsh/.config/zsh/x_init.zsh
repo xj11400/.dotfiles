@@ -71,7 +71,7 @@ x_zsh_require plugin
 x_zsh_require_dir programs
 
 # custom
-if [[ -d "$XDG_CONFIG_HOME/zsh/custom" ]];then
+if [[ -d "$X_ZSH_CONFIG_HOME/custom" && $(ls -A $X_ZSH_CONFIG_HOME/custom) ]];then
     x_zsh_require_dir custom
 fi
 
