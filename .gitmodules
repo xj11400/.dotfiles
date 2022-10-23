@@ -4,3 +4,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/xj11400/dot-nvim.git
+[submodule "zsh"]
+	path = zsh
+	url = https://github.com/xj11400/dot-zsh.git
