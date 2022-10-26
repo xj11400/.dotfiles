@@ -33,23 +33,20 @@ vmap # y?<C-R>"<CR>
 " no heighlight
 nmap <C-n> :noh<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" !!TODO conflict
 " instert mode hjkl
-" <C-hjkl>
 " <Left>
 " <Down>
 " <Up>
 " <Right>
-imap <C-h> <C-o>h
-imap <C-j> <C-o>j
-imap <C-k> <C-o>k
-imap <C-l> <C-o>l
+imap <C-b> <C-o>h
+imap <C-n> <C-o>j
+imap <C-p> <C-o>k
+imap <C-f> <C-o>l
 
-" insert mode operation
-" !!TODO shift can't work
-" https://cache.one/read/16949325
-inoremap <C-S-h> <BS>
-inoremap <C-S-d> <Del>
+" insert mode
+imap <C-h> <BS>
+imap <C-d> <Del>
+imap <C-j> <CR>
 
 imap <M-f> <C-o>w
 imap <M-b> <C-o>b
