@@ -51,6 +51,11 @@ imap <C-j> <CR>
 imap <M-f> <C-o>w
 imap <M-b> <C-o>b
 
+imap <C-a> <Home>
+imap <C-e> <End>
+imap <C-p> <Up>
+imap <C-n> <Down>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " test area
 "
