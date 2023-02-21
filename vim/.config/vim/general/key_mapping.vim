@@ -57,6 +57,11 @@ imap <C-p> <Up>
 imap <C-n> <Down>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" alternative mapping for paste
+" -----------------------------
+xnoremap <silent> p p:let @"=@0<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " test area
 "
 " when lines spanning multiple display lines, navigate through them with gj not j
