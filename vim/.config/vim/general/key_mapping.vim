@@ -53,8 +53,6 @@ imap <M-b> <C-o>b
 
 imap <C-a> <Home>
 imap <C-e> <End>
-imap <C-p> <Up>
-imap <C-n> <Down>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " alternative mapping for paste
