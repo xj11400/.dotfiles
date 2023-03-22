@@ -7,3 +7,6 @@
 [submodule "zsh"]
 	path = zsh
 	url = https://github.com/xj11400/dot-zsh.git
+[submodule "__x__"]
+	path = __x__
+	url = https://github.com/xj11400/dot_deploy.git
