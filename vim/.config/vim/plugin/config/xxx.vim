@@ -1,5 +1,6 @@
 map <localleader>I :call dein#install()<CR>
-map <localleader>U :call dein#install()<CR>
+"map <localleader>U :call dein#update()<CR>
+map <localleader>U :DeinUpdate<CR>
 
 " dein#is_sourced('vim-surround')
 
