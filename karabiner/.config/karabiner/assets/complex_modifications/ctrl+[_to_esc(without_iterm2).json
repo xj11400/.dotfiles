@@ -1,0 +1,28 @@
+{
+  "title": "ctrl + [  => esc",
+  "rules": [
+    {
+      "description": "ctrl + [  => esc",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": ["left_control"],
+              "optional": ["caps_lock"]
+            },
+            "key_code": "open_bracket"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "description": "",
+              "bundle_identifiers": ["^com.googlecode.iterm2"]
+            }
+          ],
+          "to": [{ "repeat": true, "key_code": "escape" }]
+        }
+      ]
+    }
+  ]
+}
