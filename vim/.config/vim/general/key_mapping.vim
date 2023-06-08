@@ -6,6 +6,12 @@
 " (for setting config)
 map <localleader>r :w<CR>:source %:p<CR>
 
+" file
+" ----
+map <localleader>q :q<CR>
+map <localleader>Q :qa<CR>
+map <localleader>n :enew<CR>
+
 " visual mode related
 " -------------------
 
