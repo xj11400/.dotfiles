@@ -37,7 +37,7 @@ vmap * y/<C-R>"<CR>
 vmap # y?<C-R>"<CR>
 
 " no heighlight
-nmap <C-n> :noh<CR>
+nmap <C-l> :noh<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " instert mode hjkl
 " <Left>
