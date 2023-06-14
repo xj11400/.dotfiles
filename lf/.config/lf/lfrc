@@ -101,3 +101,12 @@ cmd zip ${{
 
 # show hidden file
 set hidden
+
+# map rename
+#map I :rename; cmd-home # at the very beginning
+map c push A<c-u>      # new rename
+map A rename           # at the very end
+map I push A<c-a>      # at the very beginning
+map i push A<a-b><c-b> # before extention
+map a push A<a-b>      # after extention
+map B bulkrename
