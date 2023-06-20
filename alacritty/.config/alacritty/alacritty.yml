@@ -49,6 +49,6 @@ window:
   opacity: 0.85
 
 import : 
-  - ~/.config/alacritty/theme.yml
+  - ~/.config/alacritty/zx.yml
   - ~/.config/alacritty/keymaps.yml
 
