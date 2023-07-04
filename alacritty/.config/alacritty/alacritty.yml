@@ -45,7 +45,7 @@ debug.render_timer: false
 window:
   # MacOS only
   option_as_alt: OnlyLeft
-  opacity: 0.85
+  opacity: 0.65
   decorations: "transparent"
   padding:
     x: 20
