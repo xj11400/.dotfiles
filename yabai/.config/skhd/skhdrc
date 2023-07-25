@@ -9,7 +9,7 @@ shift + lalt - return : /Applications/Alacritty.app/Contents/MacOS/Alacritty
 shift + lalt - q : yabai --stop-service
 
 # Toggle float window
-shift + lalt - space : yabai -m window --toggle float; yabai -m window --grid 9:9:1:1:7:7
+shift + lalt - space : yabai -m window --toggle float; yabai -m window --grid 19:19:1:1:17:17
 
 # Layout
 lalt - t : yabai -m space --layout bsp

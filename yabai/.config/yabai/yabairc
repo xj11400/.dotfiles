@@ -37,7 +37,7 @@ yabai -m config mouse_drop_action            swap
 # General space settings
 yabai -m config window_placement             first_child # second_child
 yabai -m config window_topmost               on
-yabai -m config layout                       bsp
+yabai -m config layout                       float
 yabai -m config top_padding                  04
 yabai -m config bottom_padding               04
 yabai -m config left_padding                 04
@@ -46,8 +46,9 @@ yabai -m config window_gap                   04
 
 
 ### Rules ###
+float_grid_xl=19:19:1:1:17:17
 float_grid=9:9:1:1:7:7
-yabai -m rule --add app="^Alacritty$"                             manage=off  grid=$float_grid
+yabai -m rule --add app="^Alacritty$"                             manage=off  grid=$float_grid_xl
 yabai -m rule --add app="^System Preferences$"                    manage=off  grid=$float_grid
 yabai -m rule --add app="^System Information$"                    manage=off  grid=$float_grid
 yabai -m rule --add app="^Finder$"                                manage=off  grid=$float_grid
