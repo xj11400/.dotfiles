@@ -60,6 +60,7 @@ yabai -m rule --add app="^Calculator$"                            manage=off
 yabai -m rule --add app="^Font Book$"                             manage=off
 yabai -m rule --add app="^Archive Utility$"                       manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$"                 sticky=on
+yabai -m rule --add label="LINE" app="^LINE$"                     manage=off  grid=$float_grid
 
 ### execute skhd ###
 skhd &
