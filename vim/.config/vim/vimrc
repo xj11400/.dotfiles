@@ -2,8 +2,6 @@
 "
 " ====================================================
 
-if has('nvim')
-    source $HOME/.config/nvim/init.vim
-else
+if !has('nvim')
     source $HOME/.config/vim/init.vim
 endif
