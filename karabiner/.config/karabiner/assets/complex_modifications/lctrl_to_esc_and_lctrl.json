@@ -1,8 +1,8 @@
 {
-  "title": "Change left_ctrl to dual keys, escape and left_control.",
+  "title": "Change left_control to dual keys, escape and left_control.",
   "rules": [
     {
-      "description": "Change left_ctrl to left_control if pressed with other keys, change left_ctrl to escape if pressed alone.",
+      "description": "Change left_control to left_control if pressed with other keys, change left_control to escape if pressed alone.",
       "manipulators": [
         {
           "type": "basic",

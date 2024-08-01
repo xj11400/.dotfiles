@@ -1,5 +1,5 @@
 {
-  "title": "iterm2",
+  "title": "CMD to ALT for tmux in terminals",
   "rules": [
     {
       "description": "cmd+\\ to alt+\\",
@@ -13,7 +13,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com.googlecode.iterm2"]
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
             }
           ],
           "to": [
@@ -38,7 +38,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com.googlecode.iterm2"]
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
             }
           ],
           "to": [{ "repeat": true, "key_code": "b", "modifiers": ["left_alt"] }]
@@ -57,7 +57,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com.googlecode.iterm2"]
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
             }
           ],
           "to": [{ "repeat": true, "key_code": "f", "modifiers": ["left_alt"] }]
@@ -76,7 +76,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com.googlecode.iterm2"]
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
             }
           ],
           "to": [{ "repeat": true, "key_code": "d", "modifiers": ["left_alt"] }]

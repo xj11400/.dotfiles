@@ -1,8 +1,8 @@
 {
-  "title": "ctrl + [  => esc",
+  "title": "ctrl + j => return",
   "rules": [
     {
-      "description": "ctrl + [  => esc",
+      "description": "ctrl + j => return",
       "manipulators": [
         {
           "type": "basic",
@@ -11,16 +11,16 @@
               "mandatory": ["left_control"],
               "optional": ["caps_lock"]
             },
-            "key_code": "open_bracket"
+            "key_code": "j"
           },
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "description": "",
-              "bundle_identifiers": ["^com.googlecode.iterm2"]
+              "description": "Without functioning under a specific terminal",
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
             }
           ],
-          "to": [{ "repeat": true, "key_code": "escape" }]
+          "to": [{ "repeat": true, "key_code": "return_or_enter" }]
         }
       ]
     }
