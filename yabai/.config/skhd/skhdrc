@@ -1,0 +1,162 @@
+#
+# Yabai
+#
+
+# Open terminal
+shift + lalt - return : /Applications/Alacritty.app/Contents/MacOS/Alacritty
+
+# Quit
+shift + lalt - q : yabai --stop-service
+
+# Toggle float window
+shift + lalt - space : yabai -m window --toggle float; yabai -m window --grid 19:19:1:1:17:17
+
+# Layout
+lalt - t : yabai -m space --layout bsp
+lalt - f : yabai -m space --layout float
+
+# Fullscreen
+lalt - return : yabai -m window --toggle native-fullscreen
+lalt - m : yabai -m window --toggle zoom-fullscreen
+
+# Navigation
+lalt - h : yabai -m window --focus west
+lalt - j : yabai -m window --focus south
+lalt - k : yabai -m window --focus north
+lalt - l : yabai -m window --focus east
+lalt - r : yabai -m window --focus recent
+# 0x21 : [
+lalt - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+# 0x1E : ]
+lalt - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+
+# Navigate workspaces
+lalt - 0 : yabai -m space --focus recent
+lalt - 1 : yabai -m space --focus 1
+lalt - 2 : yabai -m space --focus 2
+lalt - 3 : yabai -m space --focus 3
+lalt - 4 : yabai -m space --focus 4
+lalt - 5 : yabai -m space --focus 5
+lalt - 6 : yabai -m space --focus 6
+lalt - 7 : yabai -m space --focus 7
+lalt - 8 : yabai -m space --focus 8
+lalt - 9 : yabai -m space --focus 9
+# 0x2B : ,
+lalt - 0x2F : yabai -m space --focus next
+# 0x2F : .
+lalt - 0x2B : yabai -m space --focus prev
+
+# ========== Window (lalt + hjkl) ========== {{{
+
+# Warp window
+# re-insert the current window, splitting the window
+ctrl + lalt - h : yabai -m window --warp west
+ctrl + lalt - j : yabai -m window --warp south
+ctrl + lalt - k : yabai -m window --warp north
+ctrl + lalt - l : yabai -m window --warp east
+
+# Swap window
+shift + lalt - h : yabai -m window --swap west
+shift + lalt - j : yabai -m window --swap south
+shift + lalt - k : yabai -m window --swap north
+shift + lalt - l : yabai -m window --swap east
+
+# Rotate window tree
+shift + lalt - r : yabai -m space --rotate 90
+
+# Resize windows
+lctrl + shift + lalt - h : yabai -m window --resize left:-50:0; \
+                           yabai -m window --resize right:-50:0
+lctrl + shift + lalt - j : yabai -m window --resize bottom:0:50; \
+                           yabai -m window --resize top:0:50
+lctrl + shift + lalt - k : yabai -m window --resize top:0:-50; \
+                           yabai -m window --resize bottom:0:-50
+lctrl + shift + lalt - l : yabai -m window --resize right:50:0; \
+                           yabai -m window --resize left:50:0
+# Equalize size of windows
+# 0x18 : =
+lctrl + shift + lalt - 0x18 : yabai -m space --balance
+
+# Set/unset the insertion position for a new window to be opened in terms of the current window
+# 0x2C : /
+shift + lalt - up : yabai -m window --insert north
+shift + lalt - down : yabai -m window --insert south
+shift + lalt - left : yabai -m window --insert west
+shift + lalt - right : yabai -m window --insert east
+shift + lalt - 0x2C : yabai -m window --insert stack
+
+# }}} Window
+
+# ========== Window - Space (shift + lalt) ========== {{{
+
+# Send window to workspace and follow focus
+#   - 1-9:  send the current window to the workspace #1-#9, and focus that window
+#   - 0:    send the current window to the recently-focused workspace, and focus that window
+#   - , | .: send the current window to the workspace on its left or right (support sending across the display and cycling through), and focus that window
+#     e.g., 4 | 1 2 | 3 (three display and currently at 3), [ will move the current window to workspace #2 and focus this window on workspace #2, and ] will move the current window to workspace #4 and focus this window on workspace #4
+shift + lalt - 0 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space recent && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 1 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 1 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 2 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 2 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 3 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 3 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 4 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 4 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 5 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 5 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 6 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 6 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 7 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 7 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 8 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 8 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 9 : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                  yabai -m window --space 9 && \
+                  yabai -m window --focus ${cur_window}
+shift + lalt - 0x2B : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                     workspace_left=$(cur_space=$(yabai -m query --spaces --space | jq -r '.index') && \
+                                      yabai -m query --displays | jq -r "sort_by(.frame.x) | [.[] | .spaces] | flatten | if index($cur_space) == 0 then .[length - 1] else .[index($cur_space) - 1] end") && \
+                     yabai -m window --space ${workspace_left} && \
+                     yabai -m window --focus ${cur_window}
+shift + lalt - 0x2F : cur_window=$(yabai -m query --windows --window | jq '.id') && \
+                     workspace_right=$(cur_space=$(yabai -m query --spaces --space | jq -r '.index') && \
+                                      yabai -m query --displays | jq -r "sort_by(.frame.x) | [.[] | .spaces] | flatten | if index($cur_space) + 1 == length then .[0] else .[index($cur_space) + 1] end") && \
+                     yabai -m window --space ${workspace_right} && \
+                     yabai -m window --focus ${cur_window}
+
+
+# }}} Window - Space
+
+# ========== Space (lctrl + lalt) ========== {{{
+
+# Create desktop , destroy
+shift + lctrl +  lalt - n : yabai -m space --create && \
+                           yabai -m window --space next && \
+                           yabai -m space --focus next
+
+lctrl + lalt - n : yabai -m space --create && \
+                  yabai -m space --focus next
+
+lctrl + lalt - x : yabai -m space --destroy
+
+# Swap space
+# 0x2B : ,
+lctrl + lalt - 0x2F : yabai -m space --swap next
+# 0x2F : .
+lctrl + lalt - 0x2B : yabai -m space --swap prev
+
+# Enable / Disable gaps in current workspace
+lctrl + lalt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+# }}} Space
