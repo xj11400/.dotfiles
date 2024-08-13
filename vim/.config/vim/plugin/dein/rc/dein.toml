@@ -1,0 +1,10 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
+hook_add = 'map <localleader>u :DeinUpdate<CR>'
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+

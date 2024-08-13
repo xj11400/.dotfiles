@@ -1,0 +1,42 @@
+#[[plugins]]
+#repo = 'arcticicestudio/nord-vim'
+#hook_add = 'colorscheme nord'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = 'map <leader>e :NERDTreeToggle<CR>'
+
+[[plugins]]
+repo = 'psliwka/vim-smoothie'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+let g:ale_echo_msg_format = '[%linter%] %s'
+let g:ale_rust_cargo_use_check = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_sign_error = "✗"
+let g:ale_sign_warning = "⚠"
+let g:ale_linters = {
+  \ 'python': ['flake8'],
+  \ 'rust': ['cargo'],
+  \ 'go': ['gofmt', 'go vet'],
+  \ 'cpp': ['gcc'],
+  \ 'c': ['gcc'],
+  \}
+let g:ale_fixers = {
+  \ 'python': ['black'],
+  \ 'rust': ['rustfmt'],
+  \ 'go': ['gofmt'],
+  \ 'cpp': ['uncrustify'],
+  \ 'c': ['uncrustify'],
+  \}
+let g:ale_fix_on_save = 1
+'''

@@ -1,0 +1,7 @@
+"
+"
+" ====================================================
+
+if !has('nvim')
+    source $HOME/.config/vim/init.vim
+endif
