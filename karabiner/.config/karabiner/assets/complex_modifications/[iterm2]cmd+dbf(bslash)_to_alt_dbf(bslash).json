@@ -1,0 +1,87 @@
+{
+  "title": "CMD to ALT for tmux in terminals",
+  "rules": [
+    {
+      "description": "cmd+\\ to alt+\\",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": { "mandatory": ["left_gui"] },
+            "key_code": "backslash"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "backslash",
+              "modifiers": ["left_alt"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "cmd+b to alt+b",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": { "mandatory": ["left_gui"] },
+            "key_code": "b"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
+            }
+          ],
+          "to": [{ "repeat": true, "key_code": "b", "modifiers": ["left_alt"] }]
+        }
+      ]
+    },
+    {
+      "description": "cmd+f to alt+f",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": { "mandatory": ["left_gui"] },
+            "key_code": "f"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
+            }
+          ],
+          "to": [{ "repeat": true, "key_code": "f", "modifiers": ["left_alt"] }]
+        }
+      ]
+    },
+    {
+      "description": "cmd+d to alt+d",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": { "mandatory": ["left_gui"] },
+            "key_code": "d"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["com.apple.Terminal","^com.googlecode.iterm2","^com.github.wez.wezterm"]
+            }
+          ],
+          "to": [{ "repeat": true, "key_code": "d", "modifiers": ["left_alt"] }]
+        }
+      ]
+    }
+  ]
+}
