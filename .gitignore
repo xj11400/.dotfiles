@@ -1,0 +1,12 @@
+.dotmanager
+
+#
+nvim
+zsh
+tmux
+wezterm
+nix-config
+
+#
+_user
+_platform
