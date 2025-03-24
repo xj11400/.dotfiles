@@ -1,0 +1,13 @@
+[status]
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+[icon]
+files = [
+    { name = ".envrc", text = "", fg = "#32310d" },
+    { name = ".git-blame-ignore-revs", text = "", fg = "#F66271" },
+    { name = ".gitattributes", text = "", fg = "#F66271" },
+    { name = ".gitconfig", text = "", fg = "#F66271" },
+    { name = ".gitignore", text = "", fg = "#F66271" },
+    { name = ".gitmodules", text = "", fg = "#F66271" },
+]

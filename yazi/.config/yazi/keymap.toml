@@ -1,0 +1,7 @@
+[manager]
+
+append_keymap = [
+  { on = [ "g", "p" ],       run = "cd ~/Project",             desc = "Go Project" },
+  { on = [ "g", "-" ],       run = "cd -",                     desc = "Go back" },
+  { on = [ "g", "/" ],       run = "cd --interactive",         desc = "Jump interactively" },
+]
