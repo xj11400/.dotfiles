@@ -1,0 +1,9 @@
+[manager]
+ratio          = [ 1, 3, 3 ]
+linemode = "size"
+show_hidden = true
+
+[opener]
+edit = [
+	{ run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
+]
