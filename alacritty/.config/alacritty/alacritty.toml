@@ -1,0 +1,45 @@
+[window]
+decorations = "transparent"
+opacity = 0.65
+option_as_alt = "OnlyLeft"
+
+[window.padding]
+x = 20
+y = 30
+
+[cursor.style]
+shape = "Underline"
+
+[cursor]
+thickness = 0.5
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "MesloLGS Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "MesloLGS Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS Nerd Font Mono"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 0
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[selection]
+save_to_clipboard = true
+
+[terminal]
+osc52 = "CopyPaste"
+
+[general]
+import = ["~/.config/alacritty/zx.toml", "~/.config/alacritty/keymaps.toml"]
