@@ -1,0 +1,24 @@
+#
+
+# clipboard
+clipboard-read = allow
+clipboard-write = allow
+
+# window
+#window-decoration = none
+#window-theme = dark
+window-padding-x = 15
+window-padding-y = 5
+background-opacity = 0.7
+
+# cursor
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+
+# macos
+macos-option-as-alt = left
+macos-icon-screen-color = #000000
+
+# theme
+theme = zx
