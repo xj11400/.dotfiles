@@ -4,7 +4,7 @@
 nvim
 zsh
 tmux
-nix-config
+_dotflake
 
 #
 _user
