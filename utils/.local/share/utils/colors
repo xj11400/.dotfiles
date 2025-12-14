@@ -16,7 +16,7 @@ function colors::help(){
     echo '  --graphic     Display ANSI graphic mode'
     echo '  --ansi        Display ANSI colors table (default option)'
     echo '  --aixterm     Display aixterm high intensity colors table'
-    echo '  --256colors   Display 256 colors table'
+    echo '  --256         Display 256 colors table'
     echo '  --256hex      Display 256 colors table in hex'
 }
 
@@ -383,7 +383,7 @@ while [[ $# -gt 0 ]]; do
       colors::aixterm
       shift # past argument
       ;;
-    --256colors)
+    --256colors|--256)
       colors::256-colors
       shift # past argument
       ;;
