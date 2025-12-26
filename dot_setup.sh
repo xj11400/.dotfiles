@@ -6,4 +6,4 @@ if [ ! -d "./.dotmanager" ]; then
     git clone --depth 1 https://github.com/xj11400/.dotmanager.git .dotmanager
 fi
 
-source ./.dotmanager/xdots dot
+source ./.dotmanager/xdots dot $@
