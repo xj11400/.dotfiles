@@ -1,0 +1,15 @@
+# If an argument is provided, open that directory; otherwise, open the current one (.)
+oil() {
+  if [ -n "$NVIM" ]; then
+    # Inside a Neovim terminal:
+    # --server $NVIM connects to the parent instance
+    # --remote-send sends the keys to run the command
+    # <C-\><C-n> ensures Neovim returns to Normal mode before running :Oil
+    nvim --server "$NVIM" --remote-send "<C-\><C-n>:Oil ${1:-.}<CR>"
+  else
+    # In a standard terminal
+    nvim -c "Oil ${1:-.}"
+  fi
+}
+
+oil "$@"
