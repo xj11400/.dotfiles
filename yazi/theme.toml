@@ -1,3 +1,27 @@
+# https://github.com/sxyazi/yazi/blob/main/yazi-config/preset/theme-dark.toml
+
 [flavor]
 dark = "zx"
 light = "zx"
+
+[indicator]
+padding = { open = "█", close = "█" }
+
+[icon]
+prepend_dirs = [
+  { name = ".config", text = "", fg = "blue" },
+  { name = ".git", text = "", fg = "#7ba2cf" },
+  { name = ".github", text = "", fg = "#7ba2cf" },
+  { name = ".npm", text = "", fg = "#7ba2cf" },
+  { name = "Desktop", text = "", fg = "#90c7f3" },
+  { name = "Development", text = "", fg = "#90c7f3" },
+  { name = "Documents", text = "", fg = "#90c7f3" },
+  { name = "Downloads", text = "", fg = "#90c7f3" },
+  { name = "Library", text = "", fg = "#90c7f3" },
+  { name = "Movies", text = "", fg = "#90c7f3" },
+  { name = "Music", text = "", fg = "#90c7f3" },
+  { name = "Pictures", text = "", fg = "#90c7f3" },
+  { name = "Public", text = "", fg = "#90c7f3" },
+  { name = "Videos", text = "", fg = "#90c7f3" },
+]
+prepend_conds = [{ if = "dir", text = "", fg = "blue" }]

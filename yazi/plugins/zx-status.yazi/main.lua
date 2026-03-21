@@ -20,9 +20,12 @@ local function mode()
 	local style = style()
 
 	return ui.Line {
-	  ui.Span(th.status.sep_left.open):fg(style.main.bg):bg("reset"),
+		--FIX: style.main.bg causing error -> 'bg' cause error
+	  -- ui.Span(th.status.sep_left.open):fg(style.main.bg):bg("reset"),
+	  ui.Span(th.status.sep_left.open),
 	  ui.Span(" "):style(style.main),
-	  ui.Span(th.status.sep_left.close):fg(style.main.bg):bg(style.alt.bg),
+	  ui.Span(th.status.sep_left.close),
+	  -- ui.Span(th.status.sep_left.close):fg(style.main.bg):bg(style.alt.bg),
 	}
 
 end
@@ -71,9 +74,9 @@ local function right_sep()
 	local style = style()
 
 	return ui.Line {
-		ui.Span(th.status.sep_right.open):fg(style.main.bg):bg(style.alt.bg),
+		-- ui.Span(th.status.sep_right.open):fg(style.main.bg):bg(style.alt.bg),
 		ui.Span(" "):style(style.main),
-		ui.Span(th.status.sep_right.close):fg(style.main.bg):bg("reset"),
+		-- ui.Span(th.status.sep_right.close):fg(style.main.bg):bg("reset"),
 	}
 end
 
