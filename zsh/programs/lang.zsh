@@ -32,6 +32,7 @@ export MPLCONFIGDIR="$XDG_CONFIG_HOME/matplotlib"
 # ==
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export PATH="$GOPATH/bin:$PATH"
 
 # rust
 # ====
@@ -40,5 +41,4 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_CONFIG_HOME="$XDG_CONFIG_HOME/cargo"
 export CARGO_CACHE_HOME="$XDG_CACHE_HOME/cargo"
 export RUSTUP_CONFIG_HOME="$XDG_CONFIG_HOME/rustup"
-
 export PATH="$CARGO_HOME/bin:$PATH"
