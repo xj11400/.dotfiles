@@ -18,7 +18,8 @@ cursor-style-blink = false
 
 # macos
 macos-option-as-alt = left
-macos-icon-screen-color = #000000
+macos-window-buttons = hidden
+macos-icon = glass
 
 # theme
 theme = zx
